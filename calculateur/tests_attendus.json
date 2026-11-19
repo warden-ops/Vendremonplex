@@ -1,0 +1,3090 @@
+{
+ "_note": "Généré par verification/generer_attendus.mjs depuis verification/page_oracle.ts (copie de la logique de la Page dd69dd2b…, lue le 2026-11-19).",
+ "attendus": {
+  "T01": {
+   "nb": 3,
+   "rbp": 41988,
+   "vac": 0.027000000000000003,
+   "rbe": 40854.324,
+   "postes": [
+    [
+     "Taxes municipales",
+     4500
+    ],
+    [
+     "Taxes scolaires",
+     500
+    ],
+    [
+     "Assurances",
+     2500
+    ],
+    [
+     "Énergie (aires communes, chauffage payé par le propriétaire)",
+     600
+    ],
+    [
+     "Entretien et réparations",
+     1800
+    ],
+    [
+     "Gestion",
+     2042.7161999999998
+    ],
+    [
+     "Réserve de remplacement",
+     900
+    ],
+    [
+     "Autres",
+     0
+    ]
+   ],
+   "dep": 12842.716199999999,
+   "rne": 28011.6078,
+   "tga": 0.05,
+   "ec": 0.005,
+   "sens": [
+    {
+     "g": 0.045000000000000005,
+     "v": 622480.1733333333
+    },
+    {
+     "g": 0.0475,
+     "v": 589718.0589473684
+    },
+    {
+     "g": 0.05,
+     "v": 560232.156
+    },
+    {
+     "g": 0.052500000000000005,
+     "v": 533554.4342857143
+    },
+    {
+     "g": 0.055,
+     "v": 509301.96
+    }
+   ],
+   "comps": [],
+   "sPpo": {
+    "n": 0,
+    "min": "NaN",
+    "moy": "NaN",
+    "max": "NaN"
+   },
+   "sMrb": {
+    "n": 0,
+    "min": "NaN",
+    "moy": "NaN",
+    "max": "NaN"
+   },
+   "sMrn": {
+    "n": 0,
+    "min": "NaN",
+    "moy": "NaN",
+    "max": "NaN"
+   },
+   "sTga": {
+    "n": 0,
+    "min": "NaN",
+    "moy": "NaN",
+    "max": "NaN"
+   },
+   "meth": [
+    {
+     "id": "rev",
+     "nom": "Revenu : RNE / TGA",
+     "b": 509301.96,
+     "c": 560232.156,
+     "h": 622480.1733333333,
+     "w": 40,
+     "ok": true,
+     "stat": "Hypothèse",
+     "note": "TGA saisi : aucune source publique pour Sherbrooke"
+    },
+    {
+     "id": "par",
+     "nom": "Parité : prix par porte des comparables",
+     "b": "NaN",
+     "c": "NaN",
+     "h": "NaN",
+     "w": 30,
+     "ok": false,
+     "stat": "Déduit",
+     "note": "déduit des ventes saisies"
+    },
+    {
+     "id": "mrb",
+     "nom": "MRB × revenu brut potentiel",
+     "b": "NaN",
+     "c": "NaN",
+     "h": "NaN",
+     "w": 15,
+     "ok": false,
+     "stat": "Déduit",
+     "note": "déduit des comparables"
+    },
+    {
+     "id": "mrn",
+     "nom": "MRN × revenu net d'exploitation",
+     "b": "NaN",
+     "c": "NaN",
+     "h": "NaN",
+     "w": 15,
+     "ok": false,
+     "stat": "Déduit",
+     "note": "déduit des comparables"
+    }
+   ],
+   "wTot": 40,
+   "rec": {
+    "b": 510000,
+    "c": 560000,
+    "h": 620000
+   },
+   "evalTot": 0,
+   "evalMarche": 0,
+   "alertes": [],
+   "progs": [
+    {
+     "id": "pc",
+     "label": "Conventionnel, acheteur investisseur",
+     "ltv": 0.8,
+     "rate": 0.053399999999999996,
+     "am": 25,
+     "rcd": 1.2,
+     "rcdApplies": true,
+     "note": "Mise minimale 20 % pour un investisseur non occupant (Plex.io); RCD 1,20 : hypothèse."
+    },
+    {
+     "id": "po",
+     "label": "Propriétaire occupant, assuré SCHL",
+     "ltv": 0.9,
+     "rate": 0.0484,
+     "am": 25,
+     "rcd": 0,
+     "rcdApplies": false,
+     "note": "3 ou 4 logements : 90 % de prêt-valeur, prime 3,10 % (SCHL). Qualification selon le revenu personnel de l'acheteur, non calculée ici."
+    }
+   ],
+   "fin": [
+    {
+     "prog": "Conventionnel, acheteur investisseur",
+     "prixLab": "Bas",
+     "P": 510000,
+     "Lb": 323609.663321523,
+     "prime": 0,
+     "mise": 186390.336678477,
+     "miseP": 0.3654712483891706,
+     "cash": 199300.836678477,
+     "rcd": 1.2,
+     "pStar": 404512.07915190374,
+     "ok": false,
+     "rcdApplies": true,
+     "minMise": 0.19999999999999996
+    },
+    {
+     "prog": "Conventionnel, acheteur investisseur",
+     "prixLab": "Central",
+     "P": 560000,
+     "Lb": 323609.663321523,
+     "prime": 0,
+     "mise": 236390.336678477,
+     "miseP": 0.42212560121156606,
+     "cash": 250800.836678477,
+     "rcd": 1.2,
+     "pStar": 404512.07915190374,
+     "ok": false,
+     "rcdApplies": true,
+     "minMise": 0.19999999999999996
+    },
+    {
+     "prog": "Conventionnel, acheteur investisseur",
+     "prixLab": "Haut",
+     "P": 620000,
+     "Lb": 323609.663321523,
+     "prime": 0,
+     "mise": 296390.336678477,
+     "miseP": 0.4780489301265758,
+     "cash": 312600.836678477,
+     "rcd": 1.2,
+     "pStar": 404512.07915190374,
+     "ok": false,
+     "rcdApplies": true,
+     "minMise": 0.19999999999999996
+    },
+    {
+     "prog": "Propriétaire occupant, assuré SCHL",
+     "prixLab": "Bas",
+     "P": 510000,
+     "Lb": 459000,
+     "prime": 14229,
+     "mise": 51000,
+     "miseP": 0.1,
+     "cash": 65191.11,
+     "rcd": 0.8615628217180817,
+     "pStar": "Infinity",
+     "ok": true,
+     "rcdApplies": false,
+     "minMise": 0.09999999999999998
+    },
+    {
+     "prog": "Propriétaire occupant, assuré SCHL",
+     "prixLab": "Central",
+     "P": 560000,
+     "Lb": 504000,
+     "prime": 15624,
+     "mise": 56000,
+     "miseP": 0.1,
+     "cash": 71816.66,
+     "rcd": 0.7846375697789673,
+     "pStar": "Infinity",
+     "ok": true,
+     "rcdApplies": false,
+     "minMise": 0.09999999999999998
+    },
+    {
+     "prog": "Propriétaire occupant, assuré SCHL",
+     "prixLab": "Haut",
+     "P": 620000,
+     "Lb": 558000,
+     "prime": 17298,
+     "mise": 62000,
+     "miseP": 0.1,
+     "cash": 79767.32,
+     "rcd": 0.7087049017358413,
+     "pStar": "Infinity",
+     "ok": true,
+     "rcdApplies": false,
+     "minMise": 0.09999999999999998
+    }
+   ],
+   "fraisAch": 7000,
+   "vendeur": {
+    "Pv": 560000,
+    "comm": 25754.4,
+    "fv": 27254.4,
+    "net": 532745.6,
+    "q": 1,
+    "achat": 0,
+    "terr": 0,
+    "cout": 0,
+    "dpa": 0,
+    "fnacc": 0,
+    "tv": 0.25,
+    "tvSrc": "achat",
+    "netT": 133186.4,
+    "netB": 399559.19999999995,
+    "rec0": 0,
+    "pf": 0,
+    "gainB": 399559.19999999995,
+    "gainT": 133186.4,
+    "realloc": 0,
+    "gainBrut": 532745.6,
+    "N": 10,
+    "exo": 0,
+    "G": 532745.6,
+    "R": 0,
+    "PF": 0,
+    "TCG": 266372.8,
+    "baseImp": 266372.8,
+    "imp": 0,
+    "dette": 0,
+    "netVendeur": 532745.6,
+    "ati": 532745.6
+   }
+  },
+  "T02": {
+   "nb": 3,
+   "rbp": 41988,
+   "vac": 0.027000000000000003,
+   "rbe": 40854.324,
+   "postes": [
+    [
+     "Taxes municipales",
+     4500
+    ],
+    [
+     "Taxes scolaires",
+     500
+    ],
+    [
+     "Assurances",
+     2500
+    ],
+    [
+     "Énergie (aires communes, chauffage payé par le propriétaire)",
+     600
+    ],
+    [
+     "Entretien et réparations",
+     1800
+    ],
+    [
+     "Gestion",
+     2042.7161999999998
+    ],
+    [
+     "Réserve de remplacement",
+     900
+    ],
+    [
+     "Autres",
+     0
+    ]
+   ],
+   "dep": 12842.716199999999,
+   "rne": 28011.6078,
+   "tga": 0.05,
+   "ec": 0.005,
+   "sens": [
+    {
+     "g": 0.045000000000000005,
+     "v": 622480.1733333333
+    },
+    {
+     "g": 0.0475,
+     "v": 589718.0589473684
+    },
+    {
+     "g": 0.05,
+     "v": 560232.156
+    },
+    {
+     "g": 0.052500000000000005,
+     "v": 533554.4342857143
+    },
+    {
+     "g": 0.055,
+     "v": 509301.96
+    }
+   ],
+   "comps": [
+    {
+     "j": 1,
+     "nom": "Comparable fictif A (démo)",
+     "date": "démo",
+     "pr": 960000,
+     "po": 6,
+     "rb": 82000,
+     "rn": 0,
+     "adj": 0.02,
+     "pa": 979200,
+     "ppo": 163200,
+     "mrb": 11.941463414634146,
+     "mrn": "NaN",
+     "tga": "NaN"
+    },
+    {
+     "j": 2,
+     "nom": "Comparable fictif B (démo)",
+     "date": "démo",
+     "pr": 1320000,
+     "po": 8,
+     "rb": 110000,
+     "rn": 0,
+     "adj": -0.03,
+     "pa": 1280400,
+     "ppo": 160050,
+     "mrb": 11.64,
+     "mrn": "NaN",
+     "tga": "NaN"
+    },
+    {
+     "j": 3,
+     "nom": "Comparable fictif C (démo)",
+     "date": "démo",
+     "pr": 845000,
+     "po": 5,
+     "rb": 69000,
+     "rn": 0,
+     "adj": 0,
+     "pa": 845000,
+     "ppo": 169000,
+     "mrb": 12.246376811594203,
+     "mrn": "NaN",
+     "tga": "NaN"
+    }
+   ],
+   "sPpo": {
+    "n": 3,
+    "min": 160050,
+    "moy": 164083.33333333334,
+    "max": 169000
+   },
+   "sMrb": {
+    "n": 3,
+    "min": 11.64,
+    "moy": 11.942613408742782,
+    "max": 12.246376811594203
+   },
+   "sMrn": {
+    "n": 0,
+    "min": "NaN",
+    "moy": "NaN",
+    "max": "NaN"
+   },
+   "sTga": {
+    "n": 0,
+    "min": "NaN",
+    "moy": "NaN",
+    "max": "NaN"
+   },
+   "meth": [
+    {
+     "id": "rev",
+     "nom": "Revenu : RNE / TGA",
+     "b": 509301.96,
+     "c": 560232.156,
+     "h": 622480.1733333333,
+     "w": 40,
+     "ok": true,
+     "stat": "Hypothèse",
+     "note": "TGA saisi : aucune source publique pour Sherbrooke"
+    },
+    {
+     "id": "par",
+     "nom": "Parité : prix par porte des comparables",
+     "b": 480150,
+     "c": 492250,
+     "h": 507000,
+     "w": 30,
+     "ok": true,
+     "stat": "Hypothèse",
+     "note": "comparables fictifs de démonstration"
+    },
+    {
+     "id": "mrb",
+     "nom": "MRB × revenu brut potentiel",
+     "b": 488740.32,
+     "c": 501446.45180629194,
+     "h": 514200.8695652174,
+     "w": 15,
+     "ok": true,
+     "stat": "Hypothèse",
+     "note": "déduit des comparables"
+    },
+    {
+     "id": "mrn",
+     "nom": "MRN × revenu net d'exploitation",
+     "b": "NaN",
+     "c": "NaN",
+     "h": "NaN",
+     "w": 15,
+     "ok": false,
+     "stat": "Hypothèse",
+     "note": "déduit des comparables"
+    }
+   ],
+   "wTot": 85,
+   "rec": {
+    "b": 495000,
+    "c": 525000,
+    "h": 565000
+   },
+   "evalTot": 0,
+   "evalMarche": 0,
+   "alertes": [
+    [
+     "Comparables fictifs",
+     "Les comparables chargés sont des données de démonstration, pas des ventes réelles."
+    ]
+   ],
+   "progs": [
+    {
+     "id": "pc",
+     "label": "Conventionnel, acheteur investisseur",
+     "ltv": 0.8,
+     "rate": 0.053399999999999996,
+     "am": 25,
+     "rcd": 1.2,
+     "rcdApplies": true,
+     "note": "Mise minimale 20 % pour un investisseur non occupant (Plex.io); RCD 1,20 : hypothèse."
+    },
+    {
+     "id": "po",
+     "label": "Propriétaire occupant, assuré SCHL",
+     "ltv": 0.9,
+     "rate": 0.0484,
+     "am": 25,
+     "rcd": 0,
+     "rcdApplies": false,
+     "note": "3 ou 4 logements : 90 % de prêt-valeur, prime 3,10 % (SCHL). Qualification selon le revenu personnel de l'acheteur, non calculée ici."
+    }
+   ],
+   "fin": [
+    {
+     "prog": "Conventionnel, acheteur investisseur",
+     "prixLab": "Bas",
+     "P": 495000,
+     "Lb": 323609.663321523,
+     "prime": 0,
+     "mise": 171390.336678477,
+     "miseP": 0.3462431044009636,
+     "cash": 183925.836678477,
+     "rcd": 1.2,
+     "pStar": 404512.07915190374,
+     "ok": false,
+     "rcdApplies": true,
+     "minMise": 0.19999999999999996
+    },
+    {
+     "prog": "Conventionnel, acheteur investisseur",
+     "prixLab": "Central",
+     "P": 525000,
+     "Lb": 323609.663321523,
+     "prime": 0,
+     "mise": 201390.336678477,
+     "miseP": 0.3836006412923372,
+     "cash": 214750.836678477,
+     "rcd": 1.2,
+     "pStar": 404512.07915190374,
+     "ok": false,
+     "rcdApplies": true,
+     "minMise": 0.19999999999999996
+    },
+    {
+     "prog": "Conventionnel, acheteur investisseur",
+     "prixLab": "Haut",
+     "P": 565000,
+     "Lb": 323609.663321523,
+     "prime": 0,
+     "mise": 241390.336678477,
+     "miseP": 0.4272395339442071,
+     "cash": 255950.836678477,
+     "rcd": 1.2,
+     "pStar": 404512.07915190374,
+     "ok": false,
+     "rcdApplies": true,
+     "minMise": 0.19999999999999996
+    },
+    {
+     "prog": "Propriétaire occupant, assuré SCHL",
+     "prixLab": "Bas",
+     "P": 495000,
+     "Lb": 445500,
+     "prime": 13810.5,
+     "mise": 49500,
+     "miseP": 0.1,
+     "cash": 63278.445,
+     "rcd": 0.887670786012569,
+     "pStar": "Infinity",
+     "ok": true,
+     "rcdApplies": false,
+     "minMise": 0.09999999999999998
+    },
+    {
+     "prog": "Propriétaire occupant, assuré SCHL",
+     "prixLab": "Central",
+     "P": 525000,
+     "Lb": 472500,
+     "prime": 14647.5,
+     "mise": 52500,
+     "miseP": 0.1,
+     "cash": 67178.775,
+     "rcd": 0.836946741097565,
+     "pStar": "Infinity",
+     "ok": true,
+     "rcdApplies": false,
+     "minMise": 0.09999999999999998
+    },
+    {
+     "prog": "Propriétaire occupant, assuré SCHL",
+     "prixLab": "Haut",
+     "P": 565000,
+     "Lb": 508500,
+     "prime": 15763.5,
+     "mise": 56500,
+     "miseP": 0.1,
+     "cash": 72479.215,
+     "rcd": 0.7776938744711889,
+     "pStar": "Infinity",
+     "ok": true,
+     "rcdApplies": false,
+     "minMise": 0.09999999999999998
+    }
+   ],
+   "fraisAch": 7000,
+   "vendeur": {
+    "Pv": 525000,
+    "comm": 24144.75,
+    "fv": 25644.75,
+    "net": 499355.25,
+    "q": 1,
+    "achat": 0,
+    "terr": 0,
+    "cout": 0,
+    "dpa": 0,
+    "fnacc": 0,
+    "tv": 0.25,
+    "tvSrc": "achat",
+    "netT": 124838.8125,
+    "netB": 374516.4375,
+    "rec0": 0,
+    "pf": 0,
+    "gainB": 374516.4375,
+    "gainT": 124838.8125,
+    "realloc": 0,
+    "gainBrut": 499355.25,
+    "N": 10,
+    "exo": 0,
+    "G": 499355.25,
+    "R": 0,
+    "PF": 0,
+    "TCG": 249677.625,
+    "baseImp": 249677.625,
+    "imp": 0,
+    "dette": 0,
+    "netVendeur": 499355.25,
+    "ati": 499355.25
+   }
+  },
+  "T03": {
+   "nb": 4,
+   "rbp": 49560,
+   "vac": 0.027000000000000003,
+   "rbe": 48221.88,
+   "postes": [
+    [
+     "Taxes municipales",
+     4500
+    ],
+    [
+     "Taxes scolaires",
+     500
+    ],
+    [
+     "Assurances",
+     2500
+    ],
+    [
+     "Énergie (aires communes, chauffage payé par le propriétaire)",
+     600
+    ],
+    [
+     "Entretien et réparations",
+     1800
+    ],
+    [
+     "Gestion",
+     2411.094
+    ],
+    [
+     "Réserve de remplacement",
+     900
+    ],
+    [
+     "Autres",
+     0
+    ]
+   ],
+   "dep": 13211.094000000001,
+   "rne": 35010.78599999999,
+   "tga": 0.05,
+   "ec": 0.005,
+   "sens": [
+    {
+     "g": 0.045000000000000005,
+     "v": 778017.4666666664
+    },
+    {
+     "g": 0.0475,
+     "v": 737069.1789473683
+    },
+    {
+     "g": 0.05,
+     "v": 700215.7199999999
+    },
+    {
+     "g": 0.052500000000000005,
+     "v": 666872.1142857141
+    },
+    {
+     "g": 0.055,
+     "v": 636559.7454545454
+    }
+   ],
+   "comps": [
+    {
+     "j": 1,
+     "nom": "Fictif 1",
+     "date": "2026-06",
+     "pr": 640000,
+     "po": 4,
+     "rb": 50400,
+     "rn": 31000,
+     "adj": -0.02,
+     "pa": 627200,
+     "ppo": 156800,
+     "mrb": 12.444444444444445,
+     "mrn": 20.232258064516127,
+     "tga": 0.04942602040816327
+    },
+    {
+     "j": 2,
+     "nom": "Fictif 2",
+     "date": "2026-03",
+     "pr": 590000,
+     "po": 4,
+     "rb": 47000,
+     "rn": 28500,
+     "adj": 0.015,
+     "pa": 598850,
+     "ppo": 149712.5,
+     "mrb": 12.741489361702127,
+     "mrn": 21.012280701754385,
+     "tga": 0.04759121649828839
+    },
+    {
+     "j": 3,
+     "nom": "Fictif 3",
+     "date": "2025-11",
+     "pr": 710000,
+     "po": 5,
+     "rb": 56000,
+     "rn": 33800,
+     "adj": 0,
+     "pa": 710000,
+     "ppo": 142000,
+     "mrb": 12.678571428571429,
+     "mrn": 21.005917159763314,
+     "tga": 0.047605633802816905
+    },
+    {
+     "j": 4,
+     "nom": "Fictif 4",
+     "date": "2026-01",
+     "pr": 610000,
+     "po": 4,
+     "rb": 48500,
+     "rn": 29000,
+     "adj": 0.03,
+     "pa": 628300,
+     "ppo": 157075,
+     "mrb": 12.954639175257732,
+     "mrn": 21.66551724137931,
+     "tga": 0.04615629476364794
+    }
+   ],
+   "sPpo": {
+    "n": 4,
+    "min": 142000,
+    "moy": 151396.875,
+    "max": 157075
+   },
+   "sMrb": {
+    "n": 4,
+    "min": 12.444444444444445,
+    "moy": 12.704786102493934,
+    "max": 12.954639175257732
+   },
+   "sMrn": {
+    "n": 4,
+    "min": 20.232258064516127,
+    "moy": 20.978993291853282,
+    "max": 21.66551724137931
+   },
+   "sTga": {
+    "n": 4,
+    "min": 0.04615629476364794,
+    "moy": 0.04769479136822912,
+    "max": 0.04942602040816327
+   },
+   "meth": [
+    {
+     "id": "rev",
+     "nom": "Revenu : RNE / TGA",
+     "b": 636559.7454545454,
+     "c": 700215.7199999999,
+     "h": 778017.4666666664,
+     "w": 40,
+     "ok": true,
+     "stat": "Hypothèse",
+     "note": "TGA saisi : aucune source publique pour Sherbrooke"
+    },
+    {
+     "id": "par",
+     "nom": "Parité : prix par porte des comparables",
+     "b": 568000,
+     "c": 605587.5,
+     "h": 628300,
+     "w": 30,
+     "ok": true,
+     "stat": "Déduit",
+     "note": "déduit des ventes saisies"
+    },
+    {
+     "id": "mrb",
+     "nom": "MRB × revenu brut potentiel",
+     "b": 569940,
+     "c": 619500,
+     "h": 669060,
+     "w": 15,
+     "ok": true,
+     "stat": "Hypothèse",
+     "note": "MRB saisi"
+    },
+    {
+     "id": "mrn",
+     "nom": "MRN × revenu net d'exploitation",
+     "b": 708347.2573935481,
+     "c": 734491.0446365107,
+     "h": 758526.7877172412,
+     "w": 15,
+     "ok": true,
+     "stat": "Déduit",
+     "note": "déduit des comparables"
+    }
+   ],
+   "wTot": 100,
+   "rec": {
+    "b": 615000,
+    "c": 665000,
+    "h": 715000
+   },
+   "evalTot": 530000,
+   "evalMarche": 572400,
+   "alertes": [
+    [
+     "Évaluation municipale d'une année antérieure",
+     "L'évaluation saisie porte sur 2024."
+    ]
+   ],
+   "progs": [
+    {
+     "id": "pc",
+     "label": "Conventionnel, acheteur investisseur",
+     "ltv": 0.8,
+     "rate": 0.053399999999999996,
+     "am": 25,
+     "rcd": 1.2,
+     "rcdApplies": true,
+     "note": "Mise minimale 20 % pour un investisseur non occupant (Plex.io); RCD 1,20 : hypothèse."
+    },
+    {
+     "id": "po",
+     "label": "Propriétaire occupant, assuré SCHL",
+     "ltv": 0.9,
+     "rate": 0.0484,
+     "am": 25,
+     "rcd": 0,
+     "rcdApplies": false,
+     "note": "3 ou 4 logements : 90 % de prêt-valeur, prime 3,10 % (SCHL). Qualification selon le revenu personnel de l'acheteur, non calculée ici."
+    }
+   ],
+   "fin": [
+    {
+     "prog": "Conventionnel, acheteur investisseur",
+     "prixLab": "Bas",
+     "P": 615000,
+     "Lb": 404469.05979034473,
+     "prime": 0,
+     "mise": 210530.94020965527,
+     "miseP": 0.34232673204821995,
+     "cash": 226591.44020965527,
+     "rcd": 1.1999999999999997,
+     "pStar": 505586.3247379309,
+     "ok": false,
+     "rcdApplies": true,
+     "minMise": 0.19999999999999996
+    },
+    {
+     "prog": "Conventionnel, acheteur investisseur",
+     "prixLab": "Central",
+     "P": 665000,
+     "Lb": 404469.05979034473,
+     "prime": 0,
+     "mise": 260530.94020965527,
+     "miseP": 0.39177584993933123,
+     "cash": 278091.44020965527,
+     "rcd": 1.1999999999999997,
+     "pStar": 505586.3247379309,
+     "ok": false,
+     "rcdApplies": true,
+     "minMise": 0.19999999999999996
+    },
+    {
+     "prog": "Conventionnel, acheteur investisseur",
+     "prixLab": "Haut",
+     "P": 715000,
+     "Lb": 404469.05979034473,
+     "prime": 0,
+     "mise": 310530.94020965527,
+     "miseP": 0.4343090072862311,
+     "cash": 329591.44020965527,
+     "rcd": 1.1999999999999997,
+     "pStar": 505586.3247379309,
+     "ok": false,
+     "rcdApplies": true,
+     "minMise": 0.19999999999999996
+    },
+    {
+     "prog": "Propriétaire occupant, assuré SCHL",
+     "prixLab": "Bas",
+     "P": 615000,
+     "Lb": 553500,
+     "prime": 17158.5,
+     "mise": 61500,
+     "miseP": 0.1,
+     "cash": 79104.765,
+     "rcd": 0.8929884344352176,
+     "pStar": "Infinity",
+     "ok": true,
+     "rcdApplies": false,
+     "minMise": 0.09999999999999998
+    },
+    {
+     "prog": "Propriétaire occupant, assuré SCHL",
+     "prixLab": "Central",
+     "P": 665000,
+     "Lb": 598500,
+     "prime": 18553.5,
+     "mise": 66500,
+     "miseP": 0.1,
+     "cash": 85730.315,
+     "rcd": 0.8258464468836976,
+     "pStar": "Infinity",
+     "ok": true,
+     "rcdApplies": false,
+     "minMise": 0.09999999999999998
+    },
+    {
+     "prog": "Propriétaire occupant, assuré SCHL",
+     "prixLab": "Haut",
+     "P": 715000,
+     "Lb": 643500,
+     "prime": 19948.5,
+     "mise": 71500,
+     "miseP": 0.1,
+     "cash": 92355.865,
+     "rcd": 0.7680949471016209,
+     "pStar": "Infinity",
+     "ok": true,
+     "rcdApplies": false,
+     "minMise": 0.09999999999999998
+    }
+   ],
+   "fraisAch": 7000,
+   "vendeur": {
+    "Pv": 665000,
+    "comm": 30583.350000000002,
+    "fv": 32083.350000000002,
+    "net": 632916.65,
+    "q": 1,
+    "achat": 0,
+    "terr": 0,
+    "cout": 0,
+    "dpa": 0,
+    "fnacc": 0,
+    "tv": 0.20754716981132076,
+    "tvSrc": "rôle",
+    "netT": 131360.05943396228,
+    "netB": 501556.59056603775,
+    "rec0": 0,
+    "pf": 0,
+    "gainB": 501556.59056603775,
+    "gainT": 131360.05943396228,
+    "realloc": 0,
+    "gainBrut": 632916.65,
+    "N": 10,
+    "exo": 0,
+    "G": 632916.65,
+    "R": 0,
+    "PF": 0,
+    "TCG": 316458.325,
+    "baseImp": 316458.325,
+    "imp": 0,
+    "dette": 0,
+    "netVendeur": 632916.65,
+    "ati": 632916.65
+   }
+  },
+  "T04": {
+   "nb": 5,
+   "rbp": 71232,
+   "vac": 0.027000000000000003,
+   "rbe": 69308.736,
+   "postes": [
+    [
+     "Taxes municipales",
+     8000
+    ],
+    [
+     "Taxes scolaires",
+     1000
+    ],
+    [
+     "Assurances",
+     4800
+    ],
+    [
+     "Énergie (aires communes, chauffage payé par le propriétaire)",
+     2000
+    ],
+    [
+     "Entretien et réparations",
+     3600
+    ],
+    [
+     "Gestion",
+     3465.4368000000004
+    ],
+    [
+     "Réserve de remplacement",
+     1800
+    ],
+    [
+     "Autres",
+     0
+    ]
+   ],
+   "dep": 24665.4368,
+   "rne": 44643.29920000001,
+   "tga": 0.05,
+   "ec": 0.005,
+   "sens": [
+    {
+     "g": 0.045000000000000005,
+     "v": 992073.3155555556
+    },
+    {
+     "g": 0.0475,
+     "v": 939858.9305263159
+    },
+    {
+     "g": 0.05,
+     "v": 892865.9840000002
+    },
+    {
+     "g": 0.052500000000000005,
+     "v": 850348.5561904763
+    },
+    {
+     "g": 0.055,
+     "v": 811696.3490909092
+    }
+   ],
+   "comps": [
+    {
+     "j": 1,
+     "nom": "Fictif M1",
+     "date": "",
+     "pr": 1050000,
+     "po": 5,
+     "rb": 70000,
+     "rn": 41000,
+     "adj": 0,
+     "pa": 1050000,
+     "ppo": 210000,
+     "mrb": 15,
+     "mrn": 25.609756097560975,
+     "tga": 0.039047619047619046
+    },
+    {
+     "j": 2,
+     "nom": "Fictif M2",
+     "date": "",
+     "pr": 1180000,
+     "po": 6,
+     "rb": 79000,
+     "rn": 46000,
+     "adj": -0.01,
+     "pa": 1168200,
+     "ppo": 194700,
+     "mrb": 14.7873417721519,
+     "mrn": 25.395652173913042,
+     "tga": 0.039376819037835985
+    }
+   ],
+   "sPpo": {
+    "n": 2,
+    "min": 194700,
+    "moy": 202350,
+    "max": 210000
+   },
+   "sMrb": {
+    "n": 2,
+    "min": 14.7873417721519,
+    "moy": 14.893670886075949,
+    "max": 15
+   },
+   "sMrn": {
+    "n": 2,
+    "min": 25.395652173913042,
+    "moy": 25.50270413573701,
+    "max": 25.609756097560975
+   },
+   "sTga": {
+    "n": 2,
+    "min": 0.039047619047619046,
+    "moy": 0.039212219042727516,
+    "max": 0.039376819037835985
+   },
+   "meth": [
+    {
+     "id": "rev",
+     "nom": "Revenu : RNE / TGA",
+     "b": 811696.3490909092,
+     "c": 892865.9840000002,
+     "h": 992073.3155555556,
+     "w": 40,
+     "ok": true,
+     "stat": "Hypothèse",
+     "note": "TGA saisi : aucune source publique pour Sherbrooke"
+    },
+    {
+     "id": "par",
+     "nom": "Parité : prix par porte des comparables",
+     "b": 973500,
+     "c": 1011750,
+     "h": 1050000,
+     "w": 30,
+     "ok": true,
+     "stat": "Déduit",
+     "note": "déduit des ventes saisies"
+    },
+    {
+     "id": "mrb",
+     "nom": "MRB × revenu brut potentiel",
+     "b": 1053331.929113924,
+     "c": 1060905.964556962,
+     "h": 1068480,
+     "w": 15,
+     "ok": true,
+     "stat": "Déduit",
+     "note": "déduit des comparables"
+    },
+    {
+     "id": "mrn",
+     "nom": "MRN × revenu net d'exploitation",
+     "b": 1133745.6983791306,
+     "c": 1138524.8511407848,
+     "h": 1143304.0039024393,
+     "w": 15,
+     "ok": true,
+     "stat": "Déduit",
+     "note": "déduit des comparables"
+    }
+   ],
+   "wTot": 100,
+   "rec": {
+    "b": 945000,
+    "c": 990000,
+    "h": 1045000
+   },
+   "evalTot": 0,
+   "evalMarche": 0,
+   "alertes": [],
+   "progs": [
+    {
+     "id": "mc",
+     "label": "Conventionnel non assuré",
+     "ltv": 0.75,
+     "rate": 0.0584,
+     "am": 25,
+     "rcd": 1.2,
+     "rcdApplies": true,
+     "note": "75 %, 25 ans, RCD 1,20 : hypothèse à valider avec un prêteur (Plex.io)."
+    },
+    {
+     "id": "ms",
+     "label": "SCHL standard (logement locatif standard)",
+     "ltv": 0.85,
+     "rate": 0.0464,
+     "am": 40,
+     "rcd": 1.1,
+     "rcdApplies": true,
+     "note": "RCD 1,10 (5 ou 6 logements), prime de la grille SCHL avec surprime d'amortissement."
+    }
+   ],
+   "fin": [
+    {
+     "prog": "Conventionnel non assuré",
+     "prixLab": "Bas",
+     "P": 945000,
+     "Lb": 491844.5756743249,
+     "prime": 0,
+     "mise": 453155.4243256751,
+     "miseP": 0.479529549550979,
+     "cash": 479115.9243256751,
+     "rcd": 1.2,
+     "pStar": 655792.7675657665,
+     "ok": false,
+     "rcdApplies": true,
+     "minMise": 0.25
+    },
+    {
+     "prog": "Conventionnel non assuré",
+     "prixLab": "Central",
+     "P": 990000,
+     "Lb": 491844.5756743249,
+     "prime": 0,
+     "mise": 498155.4243256751,
+     "miseP": 0.5031872972986617,
+     "cash": 525465.9243256751,
+     "rcd": 1.2,
+     "pStar": 655792.7675657665,
+     "ok": false,
+     "rcdApplies": true,
+     "minMise": 0.25
+    },
+    {
+     "prog": "Conventionnel non assuré",
+     "prixLab": "Haut",
+     "P": 1045000,
+     "Lb": 491844.5756743249,
+     "prime": 0,
+     "mise": 553155.4243256751,
+     "miseP": 0.5293353342829427,
+     "cash": 582115.9243256751,
+     "rcd": 1.2,
+     "pStar": 655792.7675657665,
+     "ok": false,
+     "rcdApplies": true,
+     "minMise": 0.25
+    },
+    {
+     "prog": "SCHL standard (logement locatif standard)",
+     "prixLab": "Bas",
+     "P": 945000,
+     "Lb": 712880.5081158688,
+     "prime": 36356.90591390931,
+     "mise": 232119.49188413122,
+     "miseP": 0.2456290919408796,
+     "cash": 261352.11341638304,
+     "rcd": 1.0895337773548999,
+     "pStar": 822873.6585337023,
+     "ok": false,
+     "rcdApplies": true,
+     "minMise": 0.15000000000000002
+    },
+    {
+     "prog": "SCHL standard (logement locatif standard)",
+     "prixLab": "Central",
+     "P": 990000,
+     "Lb": 712880.5081158688,
+     "prime": 29228.100832750617,
+     "mise": 277119.4918841312,
+     "miseP": 0.27991867867083964,
+     "cash": 307060.5209590788,
+     "rcd": 1.0999999999999999,
+     "pStar": 822873.6585337023,
+     "ok": false,
+     "rcdApplies": true,
+     "minMise": 0.15000000000000002
+    },
+    {
+     "prog": "SCHL standard (logement locatif standard)",
+     "prixLab": "Haut",
+     "P": 1045000,
+     "Lb": 716321.0511087059,
+     "prime": 25787.557839913417,
+     "mise": 328678.9488912941,
+     "miseP": 0.31452530994382205,
+     "cash": 359960.3290968863,
+     "rcd": 1.1,
+     "pStar": 822873.6585337023,
+     "ok": false,
+     "rcdApplies": true,
+     "minMise": 0.15000000000000002
+    }
+   ],
+   "fraisAch": 7000,
+   "vendeur": {
+    "Pv": 990000,
+    "comm": 45530.1,
+    "fv": 47030.1,
+    "net": 942969.9,
+    "q": 1,
+    "achat": 0,
+    "terr": 0,
+    "cout": 0,
+    "dpa": 0,
+    "fnacc": 0,
+    "tv": 0.25,
+    "tvSrc": "achat",
+    "netT": 235742.475,
+    "netB": 707227.425,
+    "rec0": 0,
+    "pf": 0,
+    "gainB": 707227.425,
+    "gainT": 235742.475,
+    "realloc": 0,
+    "gainBrut": 942969.9,
+    "N": 10,
+    "exo": 0,
+    "G": 942969.9,
+    "R": 0,
+    "PF": 0,
+    "TCG": 471484.95,
+    "baseImp": 471484.95,
+    "imp": 0,
+    "dette": 0,
+    "netVendeur": 942969.9,
+    "ati": 942969.9
+   }
+  },
+  "T05": {
+   "nb": 8,
+   "rbp": 130752,
+   "vac": 0.028999999999999998,
+   "rbe": 126960.192,
+   "postes": [
+    [
+     "Taxes municipales",
+     21000
+    ],
+    [
+     "Taxes scolaires",
+     2500
+    ],
+    [
+     "Assurances",
+     9000
+    ],
+    [
+     "Énergie (aires communes, chauffage payé par le propriétaire)",
+     3500
+    ],
+    [
+     "Entretien et réparations",
+     8000
+    ],
+    [
+     "Gestion",
+     6348.009599999999
+    ],
+    [
+     "Réserve de remplacement",
+     4000
+    ],
+    [
+     "Autres",
+     2000
+    ]
+   ],
+   "dep": 56348.0096,
+   "rne": 70612.18239999999,
+   "tga": 0.045,
+   "ec": 0.005,
+   "sens": [
+    {
+     "g": 0.04,
+     "v": 1765304.5599999998
+    },
+    {
+     "g": 0.042499999999999996,
+     "v": 1661463.1152941175
+    },
+    {
+     "g": 0.045,
+     "v": 1569159.6088888887
+    },
+    {
+     "g": 0.0475,
+     "v": 1486572.2610526313
+    },
+    {
+     "g": 0.049999999999999996,
+     "v": 1412243.648
+    }
+   ],
+   "comps": [
+    {
+     "j": 1,
+     "nom": "Fictif N1",
+     "date": "",
+     "pr": 2600000,
+     "po": 8,
+     "rb": 150000,
+     "rn": 92000,
+     "adj": 0,
+     "pa": 2600000,
+     "ppo": 325000,
+     "mrb": 17.333333333333332,
+     "mrn": 28.26086956521739,
+     "tga": 0.03538461538461538
+    }
+   ],
+   "sPpo": {
+    "n": 1,
+    "min": 325000,
+    "moy": 325000,
+    "max": 325000
+   },
+   "sMrb": {
+    "n": 1,
+    "min": 17.333333333333332,
+    "moy": 17.333333333333332,
+    "max": 17.333333333333332
+   },
+   "sMrn": {
+    "n": 1,
+    "min": 28.26086956521739,
+    "moy": 28.26086956521739,
+    "max": 28.26086956521739
+   },
+   "sTga": {
+    "n": 1,
+    "min": 0.03538461538461538,
+    "moy": 0.03538461538461538,
+    "max": 0.03538461538461538
+   },
+   "meth": [
+    {
+     "id": "rev",
+     "nom": "Revenu : RNE / TGA",
+     "b": 1412243.648,
+     "c": 1569159.6088888887,
+     "h": 1765304.5599999998,
+     "w": 40,
+     "ok": true,
+     "stat": "Hypothèse",
+     "note": "TGA saisi : aucune source publique pour Sherbrooke"
+    },
+    {
+     "id": "par",
+     "nom": "Parité : prix par porte des comparables",
+     "b": 2600000,
+     "c": 2600000,
+     "h": 2600000,
+     "w": 30,
+     "ok": true,
+     "stat": "Déduit",
+     "note": "déduit des ventes saisies"
+    },
+    {
+     "id": "mrb",
+     "nom": "MRB × revenu brut potentiel",
+     "b": 2266368,
+     "c": 2266368,
+     "h": 2266368,
+     "w": 15,
+     "ok": true,
+     "stat": "Déduit",
+     "note": "déduit des comparables"
+    },
+    {
+     "id": "mrn",
+     "nom": "MRN × revenu net d'exploitation",
+     "b": 1995561.6765217388,
+     "c": 1995561.6765217388,
+     "h": 1995561.6765217388,
+     "w": 15,
+     "ok": true,
+     "stat": "Déduit",
+     "note": "déduit des comparables"
+    }
+   ],
+   "wTot": 100,
+   "rec": {
+    "b": 1980000,
+    "c": 2050000,
+    "h": 2130000
+   },
+   "evalTot": 0,
+   "evalMarche": 0,
+   "alertes": [],
+   "progs": [
+    {
+     "id": "mc",
+     "label": "Conventionnel non assuré",
+     "ltv": 0.75,
+     "rate": 0.0584,
+     "am": 25,
+     "rcd": 1.2,
+     "rcdApplies": true,
+     "note": "75 %, 25 ans, RCD 1,20 : hypothèse à valider avec un prêteur (Plex.io)."
+    },
+    {
+     "id": "ms",
+     "label": "SCHL standard (logement locatif standard)",
+     "ltv": 0.85,
+     "rate": 0.0464,
+     "am": 40,
+     "rcd": 1.3,
+     "rcdApplies": true,
+     "note": "RCD 1,30 (7 logements et plus, terme de moins de 10 ans), prime de la grille SCHL avec surprime d'amortissement."
+    }
+   ],
+   "fin": [
+    {
+     "prog": "Conventionnel non assuré",
+     "prixLab": "Bas",
+     "P": 1980000,
+     "Lb": 777949.1998200265,
+     "prime": 0,
+     "mise": 1202050.8001799735,
+     "miseP": 0.6070963637272593,
+     "cash": 1248376.3001799735,
+     "rcd": 1.2,
+     "pStar": 1037265.5997600354,
+     "ok": false,
+     "rcdApplies": true,
+     "minMise": 0.25
+    },
+    {
+     "prog": "Conventionnel non assuré",
+     "prixLab": "Central",
+     "P": 2050000,
+     "Lb": 777949.1998200265,
+     "prime": 0,
+     "mise": 1272050.8001799735,
+     "miseP": 0.6205125854536456,
+     "cash": 1320126.3001799735,
+     "rcd": 1.2,
+     "pStar": 1037265.5997600354,
+     "ok": false,
+     "rcdApplies": true,
+     "minMise": 0.25
+    },
+    {
+     "prog": "Conventionnel non assuré",
+     "prixLab": "Haut",
+     "P": 2130000,
+     "Lb": 777949.1998200265,
+     "prime": 0,
+     "mise": 1352050.8001799735,
+     "miseP": 0.6347656338873114,
+     "cash": 1402126.3001799735,
+     "rcd": 1.2,
+     "pStar": 1037265.5997600354,
+     "ok": false,
+     "rcdApplies": true,
+     "minMise": 0.25
+    },
+    {
+     "prog": "SCHL standard (logement locatif standard)",
+     "prixLab": "Bas",
+     "P": 1980000,
+     "Lb": 961013.9102208362,
+     "prime": 32193.965992398014,
+     "mise": 1018986.0897791638,
+     "miseP": 0.514639439282406,
+     "cash": 1068209.0467184796,
+     "rcd": 1.3000000000000003,
+     "pStar": 1101300.5224962402,
+     "ok": false,
+     "rcdApplies": true,
+     "minMise": 0.15000000000000002
+    },
+    {
+     "prog": "SCHL standard (logement locatif standard)",
+     "prixLab": "Central",
+     "P": 2050000,
+     "Lb": 961013.9102208362,
+     "prime": 32193.965992398014,
+     "mise": 1088986.0897791637,
+     "miseP": 0.5312127267215433,
+     "cash": 1139959.0467184796,
+     "rcd": 1.3000000000000003,
+     "pStar": 1101300.5224962402,
+     "ok": false,
+     "rcdApplies": true,
+     "minMise": 0.15000000000000002
+    },
+    {
+     "prog": "SCHL standard (logement locatif standard)",
+     "prixLab": "Haut",
+     "P": 2130000,
+     "Lb": 961013.9102208362,
+     "prime": 32193.965992398014,
+     "mise": 1168986.0897791637,
+     "miseP": 0.5488197604597013,
+     "cash": 1221959.0467184796,
+     "rcd": 1.3000000000000003,
+     "pStar": 1101300.5224962402,
+     "ok": false,
+     "rcdApplies": true,
+     "minMise": 0.15000000000000002
+    }
+   ],
+   "fraisAch": 7000,
+   "vendeur": {
+    "Pv": 2050000,
+    "comm": 94279.5,
+    "fv": 95779.5,
+    "net": 1954220.5,
+    "q": 1,
+    "achat": 0,
+    "terr": 0,
+    "cout": 0,
+    "dpa": 0,
+    "fnacc": 0,
+    "tv": 0.25,
+    "tvSrc": "achat",
+    "netT": 488555.125,
+    "netB": 1465665.375,
+    "rec0": 0,
+    "pf": 0,
+    "gainB": 1465665.375,
+    "gainT": 488555.125,
+    "realloc": 0,
+    "gainBrut": 1954220.5,
+    "N": 10,
+    "exo": 0,
+    "G": 1954220.5,
+    "R": 0,
+    "PF": 0,
+    "TCG": 977110.25,
+    "baseImp": 977110.25,
+    "imp": 0,
+    "dette": 0,
+    "netVendeur": 1954220.5,
+    "ati": 1954220.5
+   }
+  },
+  "T06": {
+   "nb": 3,
+   "rbp": 37164,
+   "vac": 0,
+   "rbe": 37164,
+   "postes": [
+    [
+     "Taxes municipales",
+     4500
+    ],
+    [
+     "Taxes scolaires",
+     500
+    ],
+    [
+     "Assurances",
+     0
+    ],
+    [
+     "Énergie (aires communes, chauffage payé par le propriétaire)",
+     600
+    ],
+    [
+     "Entretien et réparations",
+     0
+    ],
+    [
+     "Gestion",
+     0
+    ],
+    [
+     "Réserve de remplacement",
+     0
+    ],
+    [
+     "Autres",
+     0
+    ]
+   ],
+   "dep": 5600,
+   "rne": 31564,
+   "tga": 0.05,
+   "ec": 0.005,
+   "sens": [
+    {
+     "g": 0.045000000000000005,
+     "v": 701422.2222222221
+    },
+    {
+     "g": 0.0475,
+     "v": 664505.2631578947
+    },
+    {
+     "g": 0.05,
+     "v": 631280
+    },
+    {
+     "g": 0.052500000000000005,
+     "v": 601219.0476190476
+    },
+    {
+     "g": 0.055,
+     "v": 573890.9090909091
+    }
+   ],
+   "comps": [],
+   "sPpo": {
+    "n": 0,
+    "min": "NaN",
+    "moy": "NaN",
+    "max": "NaN"
+   },
+   "sMrb": {
+    "n": 0,
+    "min": "NaN",
+    "moy": "NaN",
+    "max": "NaN"
+   },
+   "sMrn": {
+    "n": 0,
+    "min": "NaN",
+    "moy": "NaN",
+    "max": "NaN"
+   },
+   "sTga": {
+    "n": 0,
+    "min": "NaN",
+    "moy": "NaN",
+    "max": "NaN"
+   },
+   "meth": [
+    {
+     "id": "rev",
+     "nom": "Revenu : RNE / TGA",
+     "b": 573890.9090909091,
+     "c": 631280,
+     "h": 701422.2222222221,
+     "w": 40,
+     "ok": true,
+     "stat": "Hypothèse",
+     "note": "TGA saisi : aucune source publique pour Sherbrooke"
+    },
+    {
+     "id": "par",
+     "nom": "Parité : prix par porte des comparables",
+     "b": "NaN",
+     "c": "NaN",
+     "h": "NaN",
+     "w": 30,
+     "ok": false,
+     "stat": "Déduit",
+     "note": "déduit des ventes saisies"
+    },
+    {
+     "id": "mrb",
+     "nom": "MRB × revenu brut potentiel",
+     "b": "NaN",
+     "c": "NaN",
+     "h": "NaN",
+     "w": 15,
+     "ok": false,
+     "stat": "Déduit",
+     "note": "déduit des comparables"
+    },
+    {
+     "id": "mrn",
+     "nom": "MRN × revenu net d'exploitation",
+     "b": "NaN",
+     "c": "NaN",
+     "h": "NaN",
+     "w": 15,
+     "ok": false,
+     "stat": "Déduit",
+     "note": "déduit des comparables"
+    }
+   ],
+   "wTot": 40,
+   "rec": {
+    "b": 573890.9090909091,
+    "c": 631280,
+    "h": 701422.2222222221
+   },
+   "evalTot": 0,
+   "evalMarche": 0,
+   "alertes": [
+    [
+     "Assurances absentes",
+     "Aucun montant d'assurance n'est saisi."
+    ],
+    [
+     "Dépenses totales sous 25 % des revenus bruts",
+     "Dépenses retenues : 15,07 % du RBP. Un acheteur et son prêteur normaliseront probablement à la hausse."
+    ],
+    [
+     "Gestion absente ou symbolique",
+     "La gestion est nulle ou inférieure à 3 % des revenus bruts."
+    ],
+    [
+     "Aucune inoccupation",
+     "Aucun taux d'inoccupation n'est saisi."
+    ],
+    [
+     "Entretien absent",
+     "Aucun montant d'entretien n'est saisi."
+    ],
+    [
+     "Pas de réserve",
+     "Aucune réserve de remplacement n'est saisie."
+    ]
+   ],
+   "progs": [
+    {
+     "id": "pc",
+     "label": "Conventionnel, acheteur investisseur",
+     "ltv": 0.8,
+     "rate": 0.053399999999999996,
+     "am": 25,
+     "rcd": 1.2,
+     "rcdApplies": true,
+     "note": "Mise minimale 20 % pour un investisseur non occupant (Plex.io); RCD 1,20 : hypothèse."
+    },
+    {
+     "id": "po",
+     "label": "Propriétaire occupant, assuré SCHL",
+     "ltv": 0.9,
+     "rate": 0.0484,
+     "am": 25,
+     "rcd": 0,
+     "rcdApplies": false,
+     "note": "3 ou 4 logements : 90 % de prêt-valeur, prime 3,10 % (SCHL). Qualification selon le revenu personnel de l'acheteur, non calculée ici."
+    }
+   ],
+   "fin": [
+    {
+     "prog": "Conventionnel, acheteur investisseur",
+     "prixLab": "Bas",
+     "P": 573890.9090909091,
+     "Lb": 364649.3798574658,
+     "prime": 0,
+     "mise": 209241.52923344326,
+     "miseP": 0.36460157482699845,
+     "cash": 222960.3928698069,
+     "rcd": 1.2,
+     "pStar": 455811.7248218322,
+     "ok": false,
+     "rcdApplies": true,
+     "minMise": 0.19999999999999996
+    },
+    {
+     "prog": "Conventionnel, acheteur investisseur",
+     "prixLab": "Central",
+     "P": 631280,
+     "Lb": 364649.3798574658,
+     "prime": 0,
+     "mise": 266630.6201425342,
+     "miseP": 0.4223650680245441,
+     "cash": 281210.3201425342,
+     "rcd": 1.2,
+     "pStar": 455811.7248218322,
+     "ok": false,
+     "rcdApplies": true,
+     "minMise": 0.19999999999999996
+    },
+    {
+     "prog": "Conventionnel, acheteur investisseur",
+     "prixLab": "Haut",
+     "P": 701422.2222222221,
+     "Lb": 364649.3798574658,
+     "prime": 0,
+     "mise": 336772.84236475633,
+     "miseP": 0.48012856122208963,
+     "cash": 352404.67569808965,
+     "rcd": 1.2,
+     "pStar": 455811.7248218322,
+     "ok": false,
+     "rcdApplies": true,
+     "minMise": 0.19999999999999996
+    },
+    {
+     "prog": "Propriétaire occupant, assuré SCHL",
+     "prixLab": "Bas",
+     "P": 573890.9090909091,
+     "Lb": 516501.8181818182,
+     "prime": 16011.556363636364,
+     "mise": 57389.09090909088,
+     "miseP": 0.09999999999999996,
+     "cash": 72548.9946181818,
+     "rcd": 0.8627436640460242,
+     "pStar": "Infinity",
+     "ok": true,
+     "rcdApplies": false,
+     "minMise": 0.09999999999999998
+    },
+    {
+     "prog": "Propriétaire occupant, assuré SCHL",
+     "prixLab": "Central",
+     "P": 631280,
+     "Lb": 568152,
+     "prime": 17612.712,
+     "mise": 63128,
+     "miseP": 0.1,
+     "cash": 79292.84408,
+     "rcd": 0.7843124218600218,
+     "pStar": "Infinity",
+     "ok": true,
+     "rcdApplies": false,
+     "minMise": 0.09999999999999998
+    },
+    {
+     "prog": "Propriétaire occupant, assuré SCHL",
+     "prixLab": "Haut",
+     "P": 701422.2222222221,
+     "Lb": 631279.9999999999,
+     "prime": 19569.679999999997,
+     "mise": 70142.22222222225,
+     "miseP": 0.10000000000000005,
+     "cash": 87535.32675555558,
+     "rcd": 0.7058811796740198,
+     "pStar": "Infinity",
+     "ok": true,
+     "rcdApplies": false,
+     "minMise": 0.09999999999999998
+    }
+   ],
+   "fraisAch": 7000,
+   "vendeur": {
+    "Pv": 631280,
+    "comm": 29032.5672,
+    "fv": 30532.5672,
+    "net": 600747.4328,
+    "q": 1,
+    "achat": 0,
+    "terr": 0,
+    "cout": 0,
+    "dpa": 0,
+    "fnacc": 0,
+    "tv": 0.25,
+    "tvSrc": "achat",
+    "netT": 150186.8582,
+    "netB": 450560.57459999993,
+    "rec0": 0,
+    "pf": 0,
+    "gainB": 450560.57459999993,
+    "gainT": 150186.8582,
+    "realloc": 0,
+    "gainBrut": 600747.4328,
+    "N": 10,
+    "exo": 0,
+    "G": 600747.4328,
+    "R": 0,
+    "PF": 0,
+    "TCG": 300373.7164,
+    "baseImp": 300373.7164,
+    "imp": 0,
+    "dette": 0,
+    "netVendeur": 600747.4328,
+    "ati": 600747.4328
+   }
+  },
+  "T07": {
+   "nb": 3,
+   "rbp": 41988,
+   "vac": 0.027000000000000003,
+   "rbe": 40854.324,
+   "postes": [
+    [
+     "Taxes municipales",
+     4500
+    ],
+    [
+     "Taxes scolaires",
+     500
+    ],
+    [
+     "Assurances",
+     2500
+    ],
+    [
+     "Énergie (aires communes, chauffage payé par le propriétaire)",
+     600
+    ],
+    [
+     "Entretien et réparations",
+     1800
+    ],
+    [
+     "Gestion",
+     2042.7161999999998
+    ],
+    [
+     "Réserve de remplacement",
+     900
+    ],
+    [
+     "Autres",
+     0
+    ]
+   ],
+   "dep": 12842.716199999999,
+   "rne": 28011.6078,
+   "tga": 0.05,
+   "ec": 0.005,
+   "sens": [
+    {
+     "g": 0.045000000000000005,
+     "v": 622480.1733333333
+    },
+    {
+     "g": 0.0475,
+     "v": 589718.0589473684
+    },
+    {
+     "g": 0.05,
+     "v": 560232.156
+    },
+    {
+     "g": 0.052500000000000005,
+     "v": 533554.4342857143
+    },
+    {
+     "g": 0.055,
+     "v": 509301.96
+    }
+   ],
+   "comps": [
+    {
+     "j": 1,
+     "nom": "Fictif P1",
+     "date": "",
+     "pr": 600000,
+     "po": 3,
+     "rb": 42000,
+     "rn": 26500,
+     "adj": 0.01,
+     "pa": 606000,
+     "ppo": 202000,
+     "mrb": 14.428571428571429,
+     "mrn": 22.867924528301888,
+     "tga": 0.04372937293729373
+    },
+    {
+     "j": 2,
+     "nom": "Fictif P2",
+     "date": "",
+     "pr": 575000,
+     "po": 3,
+     "rb": 40500,
+     "rn": 25000,
+     "adj": 0,
+     "pa": 575000,
+     "ppo": 191666.66666666666,
+     "mrb": 14.197530864197532,
+     "mrn": 23,
+     "tga": 0.043478260869565216
+    }
+   ],
+   "sPpo": {
+    "n": 2,
+    "min": 191666.66666666666,
+    "moy": 196833.3333333333,
+    "max": 202000
+   },
+   "sMrb": {
+    "n": 2,
+    "min": 14.197530864197532,
+    "moy": 14.313051146384481,
+    "max": 14.428571428571429
+   },
+   "sMrn": {
+    "n": 2,
+    "min": 22.867924528301888,
+    "moy": 22.933962264150942,
+    "max": 23
+   },
+   "sTga": {
+    "n": 2,
+    "min": 0.043478260869565216,
+    "moy": 0.043603816903429474,
+    "max": 0.04372937293729373
+   },
+   "meth": [
+    {
+     "id": "rev",
+     "nom": "Revenu : RNE / TGA",
+     "b": 509301.96,
+     "c": 560232.156,
+     "h": 622480.1733333333,
+     "w": 40,
+     "ok": true,
+     "stat": "Hypothèse",
+     "note": "TGA saisi : aucune source publique pour Sherbrooke"
+    },
+    {
+     "id": "par",
+     "nom": "Parité : prix par porte des comparables",
+     "b": 575000,
+     "c": 590500,
+     "h": 606000,
+     "w": 30,
+     "ok": true,
+     "stat": "Déduit",
+     "note": "déduit des ventes saisies"
+    },
+    {
+     "id": "mrb",
+     "nom": "MRB × revenu brut potentiel",
+     "b": 596125.925925926,
+     "c": 600976.3915343916,
+     "h": 605826.8571428572,
+     "w": 15,
+     "ok": true,
+     "stat": "Déduit",
+     "note": "déduit des comparables"
+    },
+    {
+     "id": "mrn",
+     "nom": "MRN × revenu net d'exploitation",
+     "b": 640567.3330867925,
+     "c": 642417.1562433962,
+     "h": 644266.9794000001,
+     "w": 15,
+     "ok": true,
+     "stat": "Déduit",
+     "note": "déduit des comparables"
+    }
+   ],
+   "wTot": 100,
+   "rec": {
+    "b": 560000,
+    "c": 590000,
+    "h": 620000
+   },
+   "evalTot": 400000,
+   "evalMarche": 432000,
+   "alertes": [],
+   "progs": [
+    {
+     "id": "pc",
+     "label": "Conventionnel, acheteur investisseur",
+     "ltv": 0.8,
+     "rate": 0.053399999999999996,
+     "am": 25,
+     "rcd": 1.2,
+     "rcdApplies": true,
+     "note": "Mise minimale 20 % pour un investisseur non occupant (Plex.io); RCD 1,20 : hypothèse."
+    },
+    {
+     "id": "po",
+     "label": "Propriétaire occupant, assuré SCHL",
+     "ltv": 0.9,
+     "rate": 0.0484,
+     "am": 25,
+     "rcd": 0,
+     "rcdApplies": false,
+     "note": "3 ou 4 logements : 90 % de prêt-valeur, prime 3,10 % (SCHL). Qualification selon le revenu personnel de l'acheteur, non calculée ici."
+    }
+   ],
+   "fin": [
+    {
+     "prog": "Conventionnel, acheteur investisseur",
+     "prixLab": "Bas",
+     "P": 560000,
+     "Lb": 323609.663321523,
+     "prime": 0,
+     "mise": 236390.336678477,
+     "miseP": 0.42212560121156606,
+     "cash": 250800.836678477,
+     "rcd": 1.2,
+     "pStar": 404512.07915190374,
+     "ok": false,
+     "rcdApplies": true,
+     "minMise": 0.19999999999999996
+    },
+    {
+     "prog": "Conventionnel, acheteur investisseur",
+     "prixLab": "Central",
+     "P": 590000,
+     "Lb": 323609.663321523,
+     "prime": 0,
+     "mise": 266390.336678477,
+     "miseP": 0.45150904521775764,
+     "cash": 281700.836678477,
+     "rcd": 1.2,
+     "pStar": 404512.07915190374,
+     "ok": false,
+     "rcdApplies": true,
+     "minMise": 0.19999999999999996
+    },
+    {
+     "prog": "Conventionnel, acheteur investisseur",
+     "prixLab": "Haut",
+     "P": 620000,
+     "Lb": 323609.663321523,
+     "prime": 0,
+     "mise": 296390.336678477,
+     "miseP": 0.4780489301265758,
+     "cash": 312600.836678477,
+     "rcd": 1.2,
+     "pStar": 404512.07915190374,
+     "ok": false,
+     "rcdApplies": true,
+     "minMise": 0.19999999999999996
+    },
+    {
+     "prog": "Propriétaire occupant, assuré SCHL",
+     "prixLab": "Bas",
+     "P": 560000,
+     "Lb": 504000,
+     "prime": 15624,
+     "mise": 56000,
+     "miseP": 0.1,
+     "cash": 71816.66,
+     "rcd": 0.7846375697789673,
+     "pStar": "Infinity",
+     "ok": true,
+     "rcdApplies": false,
+     "minMise": 0.09999999999999998
+    },
+    {
+     "prog": "Propriétaire occupant, assuré SCHL",
+     "prixLab": "Central",
+     "P": 590000,
+     "Lb": 531000,
+     "prime": 16461,
+     "mise": 59000,
+     "miseP": 0.1,
+     "cash": 75791.99,
+     "rcd": 0.744740744196986,
+     "pStar": "Infinity",
+     "ok": true,
+     "rcdApplies": false,
+     "minMise": 0.09999999999999998
+    },
+    {
+     "prog": "Propriétaire occupant, assuré SCHL",
+     "prixLab": "Haut",
+     "P": 620000,
+     "Lb": 558000,
+     "prime": 17298,
+     "mise": 62000,
+     "miseP": 0.1,
+     "cash": 79767.32,
+     "rcd": 0.7087049017358413,
+     "pStar": "Infinity",
+     "ok": true,
+     "rcdApplies": false,
+     "minMise": 0.09999999999999998
+    }
+   ],
+   "fraisAch": 7000,
+   "vendeur": {
+    "Pv": 620000,
+    "comm": 28513.800000000003,
+    "fv": 30013.800000000003,
+    "net": 589986.2,
+    "q": 1,
+    "achat": 380000,
+    "terr": 96500,
+    "cout": 309500,
+    "dpa": 60000,
+    "fnacc": 249500,
+    "tv": 0.225,
+    "tvSrc": "rôle",
+    "netT": 132746.895,
+    "netB": 457239.30499999993,
+    "rec0": 60000,
+    "pf": 0,
+    "gainB": 147739.30499999993,
+    "gainT": 36246.89499999999,
+    "realloc": 0,
+    "gainBrut": 183986.19999999992,
+    "N": 14,
+    "exo": 0,
+    "G": 183986.19999999992,
+    "R": 60000,
+    "PF": 0,
+    "TCG": 91993.09999999996,
+    "baseImp": 151993.09999999998,
+    "imp": 81027.52161,
+    "dette": 254000,
+    "netVendeur": 254958.67838999996,
+    "ati": 243986.19999999992
+   }
+  },
+  "T08": {
+   "nb": 3,
+   "rbp": 48192,
+   "vac": 0.024,
+   "rbe": 47035.392,
+   "postes": [
+    [
+     "Taxes municipales",
+     4500
+    ],
+    [
+     "Taxes scolaires",
+     500
+    ],
+    [
+     "Assurances",
+     2500
+    ],
+    [
+     "Énergie (aires communes, chauffage payé par le propriétaire)",
+     600
+    ],
+    [
+     "Entretien et réparations",
+     1800
+    ],
+    [
+     "Gestion",
+     2351.7696
+    ],
+    [
+     "Réserve de remplacement",
+     900
+    ],
+    [
+     "Autres",
+     0
+    ]
+   ],
+   "dep": 13151.7696,
+   "rne": 33883.6224,
+   "tga": 0.05,
+   "ec": 0.005,
+   "sens": [
+    {
+     "g": 0.045000000000000005,
+     "v": 752969.3866666666
+    },
+    {
+     "g": 0.0475,
+     "v": 713339.4189473684
+    },
+    {
+     "g": 0.05,
+     "v": 677672.448
+    },
+    {
+     "g": 0.052500000000000005,
+     "v": 645402.3314285714
+    },
+    {
+     "g": 0.055,
+     "v": 616065.8618181818
+    }
+   ],
+   "comps": [
+    {
+     "j": 1,
+     "nom": "Fictif Q1",
+     "date": "",
+     "pr": 700000,
+     "po": 3,
+     "rb": 48000,
+     "rn": 29000,
+     "adj": 0,
+     "pa": 700000,
+     "ppo": 233333.33333333334,
+     "mrb": 14.583333333333334,
+     "mrn": 24.137931034482758,
+     "tga": 0.041428571428571426
+    }
+   ],
+   "sPpo": {
+    "n": 1,
+    "min": 233333.33333333334,
+    "moy": 233333.33333333334,
+    "max": 233333.33333333334
+   },
+   "sMrb": {
+    "n": 1,
+    "min": 14.583333333333334,
+    "moy": 14.583333333333334,
+    "max": 14.583333333333334
+   },
+   "sMrn": {
+    "n": 1,
+    "min": 24.137931034482758,
+    "moy": 24.137931034482758,
+    "max": 24.137931034482758
+   },
+   "sTga": {
+    "n": 1,
+    "min": 0.041428571428571426,
+    "moy": 0.041428571428571426,
+    "max": 0.041428571428571426
+   },
+   "meth": [
+    {
+     "id": "rev",
+     "nom": "Revenu : RNE / TGA",
+     "b": 616065.8618181818,
+     "c": 677672.448,
+     "h": 752969.3866666666,
+     "w": 40,
+     "ok": true,
+     "stat": "Hypothèse",
+     "note": "TGA saisi : aucune source publique pour Sherbrooke"
+    },
+    {
+     "id": "par",
+     "nom": "Parité : prix par porte des comparables",
+     "b": 700000,
+     "c": 700000,
+     "h": 700000,
+     "w": 30,
+     "ok": true,
+     "stat": "Déduit",
+     "note": "déduit des ventes saisies"
+    },
+    {
+     "id": "mrb",
+     "nom": "MRB × revenu brut potentiel",
+     "b": 702800,
+     "c": 702800,
+     "h": 702800,
+     "w": 15,
+     "ok": true,
+     "stat": "Déduit",
+     "note": "déduit des comparables"
+    },
+    {
+     "id": "mrn",
+     "nom": "MRN × revenu net d'exploitation",
+     "b": 817880.5406896551,
+     "c": 817880.5406896551,
+     "h": 817880.5406896551,
+     "w": 15,
+     "ok": true,
+     "stat": "Déduit",
+     "note": "déduit des comparables"
+    }
+   ],
+   "wTot": 100,
+   "rec": {
+    "b": 685000,
+    "c": 710000,
+    "h": 740000
+   },
+   "evalTot": 0,
+   "evalMarche": 0,
+   "alertes": [],
+   "progs": [
+    {
+     "id": "pc",
+     "label": "Conventionnel, acheteur investisseur",
+     "ltv": 0.8,
+     "rate": 0.053399999999999996,
+     "am": 25,
+     "rcd": 1.2,
+     "rcdApplies": true,
+     "note": "Mise minimale 20 % pour un investisseur non occupant (Plex.io); RCD 1,20 : hypothèse."
+    },
+    {
+     "id": "po",
+     "label": "Propriétaire occupant, assuré SCHL",
+     "ltv": 0.9,
+     "rate": 0.0484,
+     "am": 25,
+     "rcd": 0,
+     "rcdApplies": false,
+     "note": "3 ou 4 logements : 90 % de prêt-valeur, prime 3,10 % (SCHL). Qualification selon le revenu personnel de l'acheteur, non calculée ici."
+    }
+   ],
+   "fin": [
+    {
+     "prog": "Conventionnel, acheteur investisseur",
+     "prixLab": "Bas",
+     "P": 685000,
+     "Lb": 391447.27840212063,
+     "prime": 0,
+     "mise": 293552.72159787937,
+     "miseP": 0.4285441191209918,
+     "cash": 310788.22159787937,
+     "rcd": 1.2,
+     "pStar": 489309.0980026508,
+     "ok": false,
+     "rcdApplies": true,
+     "minMise": 0.19999999999999996
+    },
+    {
+     "prog": "Conventionnel, acheteur investisseur",
+     "prixLab": "Central",
+     "P": 710000,
+     "Lb": 391447.27840212063,
+     "prime": 0,
+     "mise": 318552.72159787937,
+     "miseP": 0.44866580506743575,
+     "cash": 336413.22159787937,
+     "rcd": 1.2,
+     "pStar": 489309.0980026508,
+     "ok": false,
+     "rcdApplies": true,
+     "minMise": 0.19999999999999996
+    },
+    {
+     "prog": "Conventionnel, acheteur investisseur",
+     "prixLab": "Haut",
+     "P": 740000,
+     "Lb": 391447.27840212063,
+     "prime": 0,
+     "mise": 348552.72159787937,
+     "miseP": 0.47101719134848563,
+     "cash": 367163.22159787937,
+     "rcd": 1.2,
+     "pStar": 489309.0980026508,
+     "ok": false,
+     "rcdApplies": true,
+     "minMise": 0.19999999999999996
+    },
+    {
+     "prog": "Propriétaire occupant, assuré SCHL",
+     "prixLab": "Bas",
+     "P": 685000,
+     "Lb": 616500,
+     "prime": 19111.5,
+     "mise": 68500,
+     "miseP": 0.1,
+     "cash": 87455.535,
+     "rcd": 0.7759225093703501,
+     "pStar": "Infinity",
+     "ok": true,
+     "rcdApplies": false,
+     "minMise": 0.09999999999999998
+    },
+    {
+     "prog": "Propriétaire occupant, assuré SCHL",
+     "prixLab": "Central",
+     "P": 710000,
+     "Lb": 639000,
+     "prime": 19809,
+     "mise": 71000,
+     "miseP": 0.1,
+     "cash": 90643.31,
+     "rcd": 0.7486012942516758,
+     "pStar": "Infinity",
+     "ok": true,
+     "rcdApplies": false,
+     "minMise": 0.09999999999999998
+    },
+    {
+     "prog": "Propriétaire occupant, assuré SCHL",
+     "prixLab": "Haut",
+     "P": 740000,
+     "Lb": 666000,
+     "prime": 20646,
+     "mise": 74000,
+     "miseP": 0.1,
+     "cash": 94468.64,
+     "rcd": 0.7182525931333646,
+     "pStar": "Infinity",
+     "ok": true,
+     "rcdApplies": false,
+     "minMise": 0.09999999999999998
+    }
+   ],
+   "fraisAch": 7000,
+   "vendeur": {
+    "Pv": 710000,
+    "comm": 32652.9,
+    "fv": 34152.9,
+    "net": 675847.1,
+    "q": 0.5,
+    "achat": 300000,
+    "terr": 75000,
+    "cout": 225000,
+    "dpa": 40000,
+    "fnacc": 185000,
+    "tv": 0.25,
+    "tvSrc": "achat",
+    "netT": 168961.775,
+    "netB": 506885.32499999995,
+    "rec0": 40000,
+    "pf": 0,
+    "gainB": 281885.32499999995,
+    "gainT": 93961.775,
+    "realloc": 0,
+    "gainBrut": 375847.1,
+    "N": 12,
+    "exo": 56377.064999999995,
+    "G": 159735.0175,
+    "R": 20000,
+    "PF": 0,
+    "TCG": 79867.50875,
+    "baseImp": 99867.50875,
+    "imp": 50103.529139875,
+    "dette": 60000,
+    "netVendeur": 227820.02086012496,
+    "ati": 179735.0175
+   }
+  },
+  "T09": {
+   "nb": 3,
+   "rbp": 41988,
+   "vac": 0.027000000000000003,
+   "rbe": 40854.324,
+   "postes": [
+    [
+     "Taxes municipales",
+     4500
+    ],
+    [
+     "Taxes scolaires",
+     500
+    ],
+    [
+     "Assurances",
+     2500
+    ],
+    [
+     "Énergie (aires communes, chauffage payé par le propriétaire)",
+     600
+    ],
+    [
+     "Entretien et réparations",
+     1800
+    ],
+    [
+     "Gestion",
+     2042.7161999999998
+    ],
+    [
+     "Réserve de remplacement",
+     900
+    ],
+    [
+     "Autres",
+     0
+    ]
+   ],
+   "dep": 12842.716199999999,
+   "rne": 28011.6078,
+   "tga": 0.05,
+   "ec": 0.005,
+   "sens": [
+    {
+     "g": 0.045000000000000005,
+     "v": 622480.1733333333
+    },
+    {
+     "g": 0.0475,
+     "v": 589718.0589473684
+    },
+    {
+     "g": 0.05,
+     "v": 560232.156
+    },
+    {
+     "g": 0.052500000000000005,
+     "v": 533554.4342857143
+    },
+    {
+     "g": 0.055,
+     "v": 509301.96
+    }
+   ],
+   "comps": [],
+   "sPpo": {
+    "n": 0,
+    "min": "NaN",
+    "moy": "NaN",
+    "max": "NaN"
+   },
+   "sMrb": {
+    "n": 0,
+    "min": "NaN",
+    "moy": "NaN",
+    "max": "NaN"
+   },
+   "sMrn": {
+    "n": 0,
+    "min": "NaN",
+    "moy": "NaN",
+    "max": "NaN"
+   },
+   "sTga": {
+    "n": 0,
+    "min": "NaN",
+    "moy": "NaN",
+    "max": "NaN"
+   },
+   "meth": [
+    {
+     "id": "rev",
+     "nom": "Revenu : RNE / TGA",
+     "b": 509301.96,
+     "c": 560232.156,
+     "h": 622480.1733333333,
+     "w": 40,
+     "ok": true,
+     "stat": "Hypothèse",
+     "note": "TGA saisi : aucune source publique pour Sherbrooke"
+    },
+    {
+     "id": "par",
+     "nom": "Parité : prix par porte des comparables",
+     "b": "NaN",
+     "c": "NaN",
+     "h": "NaN",
+     "w": 30,
+     "ok": false,
+     "stat": "Déduit",
+     "note": "déduit des ventes saisies"
+    },
+    {
+     "id": "mrb",
+     "nom": "MRB × revenu brut potentiel",
+     "b": "NaN",
+     "c": "NaN",
+     "h": "NaN",
+     "w": 15,
+     "ok": false,
+     "stat": "Déduit",
+     "note": "déduit des comparables"
+    },
+    {
+     "id": "mrn",
+     "nom": "MRN × revenu net d'exploitation",
+     "b": "NaN",
+     "c": "NaN",
+     "h": "NaN",
+     "w": 15,
+     "ok": false,
+     "stat": "Déduit",
+     "note": "déduit des comparables"
+    }
+   ],
+   "wTot": 40,
+   "rec": {
+    "b": 510000,
+    "c": 560000,
+    "h": 620000
+   },
+   "evalTot": 400000,
+   "evalMarche": 432000,
+   "alertes": [],
+   "progs": [
+    {
+     "id": "pc",
+     "label": "Conventionnel, acheteur investisseur",
+     "ltv": 0.8,
+     "rate": 0.053399999999999996,
+     "am": 25,
+     "rcd": 1.2,
+     "rcdApplies": true,
+     "note": "Mise minimale 20 % pour un investisseur non occupant (Plex.io); RCD 1,20 : hypothèse."
+    },
+    {
+     "id": "po",
+     "label": "Propriétaire occupant, assuré SCHL",
+     "ltv": 0.9,
+     "rate": 0.0484,
+     "am": 25,
+     "rcd": 0,
+     "rcdApplies": false,
+     "note": "3 ou 4 logements : 90 % de prêt-valeur, prime 3,10 % (SCHL). Qualification selon le revenu personnel de l'acheteur, non calculée ici."
+    }
+   ],
+   "fin": [
+    {
+     "prog": "Conventionnel, acheteur investisseur",
+     "prixLab": "Bas",
+     "P": 510000,
+     "Lb": 323609.663321523,
+     "prime": 0,
+     "mise": 186390.336678477,
+     "miseP": 0.3654712483891706,
+     "cash": 199300.836678477,
+     "rcd": 1.2,
+     "pStar": 404512.07915190374,
+     "ok": false,
+     "rcdApplies": true,
+     "minMise": 0.19999999999999996
+    },
+    {
+     "prog": "Conventionnel, acheteur investisseur",
+     "prixLab": "Central",
+     "P": 560000,
+     "Lb": 323609.663321523,
+     "prime": 0,
+     "mise": 236390.336678477,
+     "miseP": 0.42212560121156606,
+     "cash": 250800.836678477,
+     "rcd": 1.2,
+     "pStar": 404512.07915190374,
+     "ok": false,
+     "rcdApplies": true,
+     "minMise": 0.19999999999999996
+    },
+    {
+     "prog": "Conventionnel, acheteur investisseur",
+     "prixLab": "Haut",
+     "P": 620000,
+     "Lb": 323609.663321523,
+     "prime": 0,
+     "mise": 296390.336678477,
+     "miseP": 0.4780489301265758,
+     "cash": 312600.836678477,
+     "rcd": 1.2,
+     "pStar": 404512.07915190374,
+     "ok": false,
+     "rcdApplies": true,
+     "minMise": 0.19999999999999996
+    },
+    {
+     "prog": "Propriétaire occupant, assuré SCHL",
+     "prixLab": "Bas",
+     "P": 510000,
+     "Lb": 459000,
+     "prime": 14229,
+     "mise": 51000,
+     "miseP": 0.1,
+     "cash": 65191.11,
+     "rcd": 0.8615628217180817,
+     "pStar": "Infinity",
+     "ok": true,
+     "rcdApplies": false,
+     "minMise": 0.09999999999999998
+    },
+    {
+     "prog": "Propriétaire occupant, assuré SCHL",
+     "prixLab": "Central",
+     "P": 560000,
+     "Lb": 504000,
+     "prime": 15624,
+     "mise": 56000,
+     "miseP": 0.1,
+     "cash": 71816.66,
+     "rcd": 0.7846375697789673,
+     "pStar": "Infinity",
+     "ok": true,
+     "rcdApplies": false,
+     "minMise": 0.09999999999999998
+    },
+    {
+     "prog": "Propriétaire occupant, assuré SCHL",
+     "prixLab": "Haut",
+     "P": 620000,
+     "Lb": 558000,
+     "prime": 17298,
+     "mise": 62000,
+     "miseP": 0.1,
+     "cash": 79767.32,
+     "rcd": 0.7087049017358413,
+     "pStar": "Infinity",
+     "ok": true,
+     "rcdApplies": false,
+     "minMise": 0.09999999999999998
+    }
+   ],
+   "fraisAch": 7000,
+   "vendeur": {
+    "Pv": 700000,
+    "comm": 32193,
+    "fv": 33693,
+    "net": 666307,
+    "q": 1,
+    "achat": 1000000,
+    "terr": 250000,
+    "cout": 750000,
+    "dpa": 0,
+    "fnacc": 750000,
+    "tv": 0.5,
+    "tvSrc": "rôle",
+    "netT": 333153.5,
+    "netB": 333153.5,
+    "rec0": 0,
+    "pf": 333693,
+    "gainB": 0,
+    "gainT": 0,
+    "realloc": 83153.5,
+    "gainBrut": 0,
+    "N": 6,
+    "exo": 0,
+    "G": 0,
+    "R": 0,
+    "PF": 333693,
+    "TCG": 0,
+    "baseImp": -333693,
+    "imp": -26612.164174999998,
+    "dette": 0,
+    "netVendeur": 692919.164175,
+    "ati": -243693
+   }
+  },
+  "T10": {
+   "nb": 3,
+   "rbp": 35628,
+   "vac": 0.013000000000000001,
+   "rbe": 35164.836,
+   "postes": [
+    [
+     "Taxes municipales",
+     30000
+    ],
+    [
+     "Taxes scolaires",
+     500
+    ],
+    [
+     "Assurances",
+     2500
+    ],
+    [
+     "Énergie (aires communes, chauffage payé par le propriétaire)",
+     600
+    ],
+    [
+     "Entretien et réparations",
+     1800
+    ],
+    [
+     "Gestion",
+     1758.2418000000002
+    ],
+    [
+     "Réserve de remplacement",
+     900
+    ],
+    [
+     "Autres",
+     0
+    ]
+   ],
+   "dep": 38058.2418,
+   "rne": -2893.4058000000005,
+   "tga": 0.05,
+   "ec": 0.005,
+   "sens": [
+    {
+     "g": 0.045000000000000005,
+     "v": -64297.90666666667
+    },
+    {
+     "g": 0.0475,
+     "v": -60913.80631578948
+    },
+    {
+     "g": 0.05,
+     "v": -57868.11600000001
+    },
+    {
+     "g": 0.052500000000000005,
+     "v": -55112.49142857143
+    },
+    {
+     "g": 0.055,
+     "v": -52607.37818181819
+    }
+   ],
+   "comps": [],
+   "sPpo": {
+    "n": 0,
+    "min": "NaN",
+    "moy": "NaN",
+    "max": "NaN"
+   },
+   "sMrb": {
+    "n": 0,
+    "min": "NaN",
+    "moy": "NaN",
+    "max": "NaN"
+   },
+   "sMrn": {
+    "n": 0,
+    "min": "NaN",
+    "moy": "NaN",
+    "max": "NaN"
+   },
+   "sTga": {
+    "n": 0,
+    "min": "NaN",
+    "moy": "NaN",
+    "max": "NaN"
+   },
+   "meth": [
+    {
+     "id": "rev",
+     "nom": "Revenu : RNE / TGA",
+     "b": -52607.37818181819,
+     "c": -57868.11600000001,
+     "h": -64297.90666666667,
+     "w": 40,
+     "ok": false,
+     "stat": "Hypothèse",
+     "note": "TGA saisi : aucune source publique pour Sherbrooke"
+    },
+    {
+     "id": "par",
+     "nom": "Parité : prix par porte des comparables",
+     "b": "NaN",
+     "c": "NaN",
+     "h": "NaN",
+     "w": 30,
+     "ok": false,
+     "stat": "Déduit",
+     "note": "déduit des ventes saisies"
+    },
+    {
+     "id": "mrb",
+     "nom": "MRB × revenu brut potentiel",
+     "b": "NaN",
+     "c": "NaN",
+     "h": "NaN",
+     "w": 15,
+     "ok": false,
+     "stat": "Déduit",
+     "note": "déduit des comparables"
+    },
+    {
+     "id": "mrn",
+     "nom": "MRN × revenu net d'exploitation",
+     "b": -52081.30440000001,
+     "c": -52081.30440000001,
+     "h": -52081.30440000001,
+     "w": 15,
+     "ok": false,
+     "stat": "Hypothèse",
+     "note": "MRN saisi"
+    }
+   ],
+   "wTot": 0,
+   "rec": {
+    "b": "NaN",
+    "c": "NaN",
+    "h": "NaN"
+   },
+   "evalTot": 0,
+   "evalMarche": 0,
+   "alertes": [],
+   "progs": [
+    {
+     "id": "pc",
+     "label": "Conventionnel, acheteur investisseur",
+     "ltv": 0.8,
+     "rate": 0.053399999999999996,
+     "am": 25,
+     "rcd": 1.2,
+     "rcdApplies": true,
+     "note": "Mise minimale 20 % pour un investisseur non occupant (Plex.io); RCD 1,20 : hypothèse."
+    },
+    {
+     "id": "po",
+     "label": "Propriétaire occupant, assuré SCHL",
+     "ltv": 0.9,
+     "rate": 0.0484,
+     "am": 25,
+     "rcd": 0,
+     "rcdApplies": false,
+     "note": "3 ou 4 logements : 90 % de prêt-valeur, prime 3,10 % (SCHL). Qualification selon le revenu personnel de l'acheteur, non calculée ici."
+    }
+   ],
+   "fin": [],
+   "fraisAch": 7000,
+   "vendeur": {
+    "Pv": "NaN",
+    "comm": "NaN",
+    "fv": "NaN",
+    "net": "NaN",
+    "q": 1,
+    "achat": 0,
+    "terr": 0,
+    "cout": 0,
+    "dpa": 0,
+    "fnacc": 0,
+    "tv": 0.25,
+    "tvSrc": "achat",
+    "netT": "NaN",
+    "netB": "NaN",
+    "rec0": "NaN",
+    "pf": "NaN",
+    "gainB": "NaN",
+    "gainT": "NaN",
+    "realloc": 0,
+    "gainBrut": "NaN",
+    "N": 10,
+    "exo": 0,
+    "G": "NaN",
+    "R": "NaN",
+    "PF": "NaN",
+    "TCG": "NaN",
+    "baseImp": "NaN",
+    "imp": 0,
+    "dette": 0,
+    "netVendeur": "NaN",
+    "ati": "NaN"
+   }
+  }
+ }
+}

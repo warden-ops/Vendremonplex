@@ -1,0 +1,7 @@
+{
+  "name": "vendremonplex",
+  "private": true,
+  "scripts": {
+    "test": "node calculateur/tests.js && node calculateur/tests_v2.js"
+  }
+}
