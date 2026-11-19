@@ -1,0 +1,1052 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vendremonplex.com/schemas/evaluation-bloc-donnees-1.0.json",
+  "$comment": "BROUILLON À APPROUVER PAR P-O. L'$id est un identifiant logique, pas une URL publiée. Aucune donnée nominative (nom, courriel, téléphone, adresse exacte) : toute demande de contact passe par le formulaire GHL habituel, jamais par ce payload.",
+  "title": "Évaluation de bloc : données envoyées au backend (sans donnée nominative)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "horodatage",
+    "pageOrigine",
+    "parametresVersion",
+    "consentement",
+    "localisation",
+    "entrees",
+    "resultat",
+    "hp"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "horodatage": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date et heure de l'envoi (ISO 8601)."
+    },
+    "pageOrigine": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "Page d'origine (chemin ou URL sans paramètre de requête personnel)."
+    },
+    "parametresVersion": {
+      "type": "string",
+      "description": "Version des paramètres de evaluation_bloc.js (actuelle : 0.1.0-brouillon-2026-11-19)."
+    },
+    "consentement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "accepte",
+        "version",
+        "horodatage"
+      ],
+      "properties": {
+        "accepte": {
+          "const": true,
+          "description": "Aucun envoi sans consentement explicite."
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Version du texte de consentement approuvé par P-O (inconnue à ce jour)."
+        },
+        "horodatage": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "localisation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ville",
+        "secteur"
+      ],
+      "properties": {
+        "ville": {
+          "enum": [
+            "sherbrooke",
+            "magog",
+            "montreal",
+            "quebec",
+            "gatineau",
+            "troisrivieres",
+            "saguenay"
+          ],
+          "description": "Ville (niveau RMR), seule localisation obligatoire."
+        },
+        "secteur": {
+          "anyOf": [
+            {
+              "type": "string",
+              "maxLength": 60,
+              "pattern": "^[^0-9]*$"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Quartier ou secteur, texte libre SANS chiffre (ni numéro civique ni code postal). Optionnel : décision de P-O."
+        }
+      }
+    },
+    "entrees": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "ville"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "plex",
+            "multi"
+          ],
+          "description": "Type d'immeuble"
+        },
+        "ville": {
+          "enum": [
+            "sherbrooke",
+            "magog",
+            "montreal",
+            "quebec",
+            "gatineau",
+            "troisrivieres",
+            "saguenay"
+          ],
+          "description": "Ville (loyers et inoccupation SCHL, droits de mutation, facteur comparatif)"
+        },
+        "n0": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 200,
+          "description": "Studio : Nombre (logements)"
+        },
+        "l0": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 20000,
+          "description": "Studio : Loyer ($/mois) ($/mois)"
+        },
+        "n1": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 200,
+          "description": "1 chambre (3 ½) : Nombre (logements)"
+        },
+        "l1": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 20000,
+          "description": "1 chambre (3 ½) : Loyer ($/mois) ($/mois)"
+        },
+        "n2": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 200,
+          "description": "2 chambres (4 ½) : Nombre (logements)"
+        },
+        "l2": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 20000,
+          "description": "2 chambres (4 ½) : Loyer ($/mois) ($/mois)"
+        },
+        "n3": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 200,
+          "description": "3 chambres + (5 ½ +) : Nombre (logements)"
+        },
+        "l3": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 20000,
+          "description": "3 chambres + (5 ½ +) : Loyer ($/mois) ($/mois)"
+        },
+        "autresRev": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1000000,
+          "description": "Autres revenus ($/an : stationnement, buanderie, rangement) ($/an)"
+        },
+        "inoc": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Inoccupation et mauvaises créances (%) (%)"
+        },
+        "taxesMun": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1000000,
+          "description": "Taxes municipales ($/an)"
+        },
+        "taxesScol": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1000000,
+          "description": "Taxes scolaires ($/an)"
+        },
+        "assur": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1000000,
+          "description": "Assurances ($/an)"
+        },
+        "energie": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1000000,
+          "description": "Énergie : aires communes, chauffage payé par le propriétaire ($/an)"
+        },
+        "entretien": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1000000,
+          "description": "Entretien et réparations ($/an)"
+        },
+        "gestion": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Gestion (% du revenu brut effectif) (% du revenu brut effectif)"
+        },
+        "reserve": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1000000,
+          "description": "Réserve de remplacement ($/an)"
+        },
+        "autres": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1000000,
+          "description": "Autres (déneigement, conciergerie, contrats) ($/an)"
+        },
+        "tga": {
+          "type": "number",
+          "minimum": 0.5,
+          "maximum": 20,
+          "description": "TGA central (%) (%)"
+        },
+        "ecart": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 400,
+          "description": "Écart de sensibilité (points de base) (points de base)"
+        },
+        "c1Prix": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100000000,
+          "description": "Comparable 1 : prix vendu ($) ($)"
+        },
+        "c1Portes": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 500,
+          "description": "Comparable 1 : portes (portes)"
+        },
+        "c1Rbp": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100000000,
+          "description": "Comparable 1 : RBP ($/an) ($/an)"
+        },
+        "c1Rne": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100000000,
+          "description": "Comparable 1 : RNE ($/an, si connu) ($/an)"
+        },
+        "c1Adj": {
+          "type": "number",
+          "minimum": -50,
+          "maximum": 50,
+          "description": "Comparable 1 : ajustement total (%) (% (peut être négatif))"
+        },
+        "c2Prix": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100000000,
+          "description": "Comparable 2 : prix vendu ($) ($)"
+        },
+        "c2Portes": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 500,
+          "description": "Comparable 2 : portes (portes)"
+        },
+        "c2Rbp": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100000000,
+          "description": "Comparable 2 : RBP ($/an) ($/an)"
+        },
+        "c2Rne": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100000000,
+          "description": "Comparable 2 : RNE ($/an, si connu) ($/an)"
+        },
+        "c2Adj": {
+          "type": "number",
+          "minimum": -50,
+          "maximum": 50,
+          "description": "Comparable 2 : ajustement total (%) (% (peut être négatif))"
+        },
+        "c3Prix": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100000000,
+          "description": "Comparable 3 : prix vendu ($) ($)"
+        },
+        "c3Portes": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 500,
+          "description": "Comparable 3 : portes (portes)"
+        },
+        "c3Rbp": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100000000,
+          "description": "Comparable 3 : RBP ($/an) ($/an)"
+        },
+        "c3Rne": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100000000,
+          "description": "Comparable 3 : RNE ($/an, si connu) ($/an)"
+        },
+        "c3Adj": {
+          "type": "number",
+          "minimum": -50,
+          "maximum": 50,
+          "description": "Comparable 3 : ajustement total (%) (% (peut être négatif))"
+        },
+        "c4Prix": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100000000,
+          "description": "Comparable 4 : prix vendu ($) ($)"
+        },
+        "c4Portes": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 500,
+          "description": "Comparable 4 : portes (portes)"
+        },
+        "c4Rbp": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100000000,
+          "description": "Comparable 4 : RBP ($/an) ($/an)"
+        },
+        "c4Rne": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100000000,
+          "description": "Comparable 4 : RNE ($/an, si connu) ($/an)"
+        },
+        "c4Adj": {
+          "type": "number",
+          "minimum": -50,
+          "maximum": 50,
+          "description": "Comparable 4 : ajustement total (%) (% (peut être négatif))"
+        },
+        "c5Prix": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100000000,
+          "description": "Comparable 5 : prix vendu ($) ($)"
+        },
+        "c5Portes": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 500,
+          "description": "Comparable 5 : portes (portes)"
+        },
+        "c5Rbp": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100000000,
+          "description": "Comparable 5 : RBP ($/an) ($/an)"
+        },
+        "c5Rne": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100000000,
+          "description": "Comparable 5 : RNE ($/an, si connu) ($/an)"
+        },
+        "c5Adj": {
+          "type": "number",
+          "minimum": -50,
+          "maximum": 50,
+          "description": "Comparable 5 : ajustement total (%) (% (peut être négatif))"
+        },
+        "srcMrb": {
+          "enum": [
+            "comps",
+            "manuel"
+          ],
+          "description": "MRB : source"
+        },
+        "mrbB": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "MRB bas (×) (×)"
+        },
+        "mrbC": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "MRB central (×) (×)"
+        },
+        "mrbH": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "MRB haut (×) (×)"
+        },
+        "srcMrn": {
+          "enum": [
+            "comps",
+            "manuel"
+          ],
+          "description": "MRN : source"
+        },
+        "mrnB": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 200,
+          "description": "MRN bas (×) (×)"
+        },
+        "mrnC": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 200,
+          "description": "MRN central (×) (×)"
+        },
+        "mrnH": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 200,
+          "description": "MRN haut (×) (×)"
+        },
+        "wRev": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Pondération : revenu (%) (pondération)"
+        },
+        "wPar": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Pondération : parité (%) (pondération)"
+        },
+        "wMrb": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Pondération : MRB (%) (pondération)"
+        },
+        "wMrn": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Pondération : MRN (%) (pondération)"
+        },
+        "arrondi": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1000000,
+          "description": "Arrondi ($) ($)"
+        },
+        "evalTerrain": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100000000,
+          "description": "Terrain ($) — rôle ($)"
+        },
+        "evalBat": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100000000,
+          "description": "Bâtiment ($) — rôle ($)"
+        },
+        "evalAnnee": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 2100,
+          "description": "Année du rôle (année)"
+        },
+        "facteur": {
+          "type": "number",
+          "minimum": 0.5,
+          "maximum": 3,
+          "description": "Facteur comparatif 2026 (×)"
+        },
+        "pcLtv": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 95,
+          "description": "Prêt-valeur maximal (%) (%)"
+        },
+        "pcTaux": {
+          "type": "number",
+          "minimum": 0.1,
+          "maximum": 20,
+          "description": "Taux (%) (%)"
+        },
+        "pcAm": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 40,
+          "description": "Amortissement (ans) (ans)"
+        },
+        "pcRcd": {
+          "type": "number",
+          "minimum": 0.5,
+          "maximum": 3,
+          "description": "RCD minimal (×)"
+        },
+        "poLtv": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 95,
+          "description": "Prêt-valeur maximal (%) (%)"
+        },
+        "poPrime": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10,
+          "description": "Prime SCHL (% du prêt) (%)"
+        },
+        "poTaux": {
+          "type": "number",
+          "minimum": 0.1,
+          "maximum": 20,
+          "description": "Taux assuré (%) (%)"
+        },
+        "poAm": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 40,
+          "description": "Amortissement (ans) (ans)"
+        },
+        "mcLtv": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 95,
+          "description": "Prêt-valeur maximal (%) (%)"
+        },
+        "mcTaux": {
+          "type": "number",
+          "minimum": 0.1,
+          "maximum": 20,
+          "description": "Taux (%) (%)"
+        },
+        "mcAm": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 40,
+          "description": "Amortissement (ans) (ans)"
+        },
+        "mcRcd": {
+          "type": "number",
+          "minimum": 0.5,
+          "maximum": 3,
+          "description": "RCD minimal (×)"
+        },
+        "msLtv": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 95,
+          "description": "Prêt-valeur maximal (%) (%)"
+        },
+        "msTaux": {
+          "type": "number",
+          "minimum": 0.1,
+          "maximum": 20,
+          "description": "Taux assuré (%) (%)"
+        },
+        "msAm": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 50,
+          "description": "Amortissement (ans) (ans)"
+        },
+        "notaire": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100000,
+          "description": "Notaire de l'acheteur ($) ($)"
+        },
+        "inspection": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100000,
+          "description": "Inspection ($) ($)"
+        },
+        "evaluation": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100000,
+          "description": "Évaluation ($) ($)"
+        },
+        "tvqPrime": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 20,
+          "description": "Taxe sur la prime (%) (%)"
+        },
+        "vendeur": {
+          "type": "boolean",
+          "description": "Afficher le côté vendeur : produit net — OPTIONNEL, absent par défaut : décision de P-O (donnée financière personnelle du vendeur)"
+        },
+        "prixVente": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100000000,
+          "description": "Prix de vente ($) — 0 = valeur centrale ($) — OPTIONNEL, absent par défaut : décision de P-O (donnée financière personnelle du vendeur)"
+        },
+        "commission": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 20,
+          "description": "Commission (% du prix, avant taxes) (% du prix, avant taxes) — OPTIONNEL, absent par défaut : décision de P-O (donnée financière personnelle du vendeur)"
+        },
+        "taxesCom": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 30,
+          "description": "TPS et TVQ sur la commission (%) (%) — OPTIONNEL, absent par défaut : décision de P-O (donnée financière personnelle du vendeur)"
+        },
+        "notaireV": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100000,
+          "description": "Notaire et autres frais de vente ($) ($) — OPTIONNEL, absent par défaut : décision de P-O (donnée financière personnelle du vendeur)"
+        },
+        "solde": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100000000,
+          "description": "Solde hypothécaire ($) — à obtenir du prêteur ($) — OPTIONNEL, absent par défaut : décision de P-O (donnée financière personnelle du vendeur)"
+        },
+        "penalite": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100000000,
+          "description": "Pénalité de remboursement anticipé ($) — à obtenir du prêteur ($) — OPTIONNEL, absent par défaut : décision de P-O (donnée financière personnelle du vendeur)"
+        },
+        "quote": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Quote-part détenue (%) (%) — OPTIONNEL, absent par défaut : décision de P-O (donnée financière personnelle du vendeur)"
+        },
+        "prixAchat": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100000000,
+          "description": "Prix d'achat ($) — 0 = impôt non calculé ($) — OPTIONNEL, absent par défaut : décision de P-O (donnée financière personnelle du vendeur)"
+        },
+        "fraisAchat": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10000000,
+          "description": "Frais d'acquisition capitalisés ($) ($) — OPTIONNEL, absent par défaut : décision de P-O (donnée financière personnelle du vendeur)"
+        },
+        "travauxCap": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100000000,
+          "description": "Travaux en capital ($) ($) — OPTIONNEL, absent par défaut : décision de P-O (donnée financière personnelle du vendeur)"
+        },
+        "dpaCum": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100000000,
+          "description": "DPA cumulée réellement réclamée ($) — formulaires T776 et TP-128 ($) — OPTIONNEL, absent par défaut : décision de P-O (donnée financière personnelle du vendeur)"
+        },
+        "terrainAchat": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Part du terrain à l'achat (%) (%) — OPTIONNEL, absent par défaut : décision de P-O (donnée financière personnelle du vendeur)"
+        },
+        "terrainVente": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Part du terrain à la vente (%) — 0 = ratio du rôle saisi (%) — OPTIONNEL, absent par défaut : décision de P-O (donnée financière personnelle du vendeur)"
+        },
+        "anAchat": {
+          "type": "number",
+          "minimum": 1950,
+          "maximum": 2100,
+          "description": "Année d'achat (année) — OPTIONNEL, absent par défaut : décision de P-O (donnée financière personnelle du vendeur)"
+        },
+        "anVente": {
+          "type": "number",
+          "minimum": 1950,
+          "maximum": 2100,
+          "description": "Année de vente (année) — OPTIONNEL, absent par défaut : décision de P-O (donnée financière personnelle du vendeur)"
+        },
+        "det": {
+          "enum": [
+            "particulier",
+            "spcc"
+          ],
+          "description": "Détenteur — OPTIONNEL, absent par défaut : décision de P-O (donnée financière personnelle du vendeur)"
+        },
+        "modeImp": {
+          "enum": [
+            "constant",
+            "tranches"
+          ],
+          "description": "Mode d'impôt (particulier) — OPTIONNEL, absent par défaut : décision de P-O (donnée financière personnelle du vendeur)"
+        },
+        "tm": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 60,
+          "description": "Taux marginal (%) (%) — OPTIONNEL, absent par défaut : décision de P-O (donnée financière personnelle du vendeur)"
+        },
+        "autreRev": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100000000,
+          "description": "Autre revenu imposable de l'année ($) ($) — OPTIONNEL, absent par défaut : décision de P-O (donnée financière personnelle du vendeur)"
+        },
+        "tSpcc": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 70,
+          "description": "Taux SPCC, revenu de placement (%) (%) — OPTIONNEL, absent par défaut : décision de P-O (donnée financière personnelle du vendeur)"
+        },
+        "incl": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Taux d'inclusion du gain en capital (%) (%) — OPTIONNEL, absent par défaut : décision de P-O (donnée financière personnelle du vendeur)"
+        },
+        "abat": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Abattement du Québec (%) (%) — OPTIONNEL, absent par défaut : décision de P-O (donnée financière personnelle du vendeur)"
+        },
+        "rp": {
+          "type": "boolean",
+          "description": "Une partie est la résidence principale du vendeur — OPTIONNEL, absent par défaut : décision de P-O (donnée financière personnelle du vendeur)"
+        },
+        "rpPct": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Partie habitée (%) (%) — OPTIONNEL, absent par défaut : décision de P-O (donnée financière personnelle du vendeur)"
+        },
+        "rpAns": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Années désignées (années) — OPTIONNEL, absent par défaut : décision de P-O (donnée financière personnelle du vendeur)"
+        }
+      }
+    },
+    "resultat": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fourchette",
+        "rbp",
+        "rbe",
+        "depenses",
+        "rne",
+        "portes",
+        "methodes",
+        "alertes",
+        "financementCentral",
+        "vendeur"
+      ],
+      "properties": {
+        "fourchette": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "bas",
+            "central",
+            "haut",
+            "arrondi"
+          ],
+          "properties": {
+            "bas": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "central": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "haut": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "arrondi": {
+              "type": "number"
+            }
+          },
+          "description": "null = fourchette non définie (aucune méthode utilisable)."
+        },
+        "rbp": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "rbe": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "depenses": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "rne": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "portes": {
+          "type": "number"
+        },
+        "methodes": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "utilisee",
+              "bas",
+              "central",
+              "haut",
+              "poids",
+              "statut"
+            ],
+            "properties": {
+              "id": {
+                "enum": [
+                  "rev",
+                  "par",
+                  "mrb",
+                  "mrn"
+                ]
+              },
+              "utilisee": {
+                "type": "boolean"
+              },
+              "bas": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "central": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "haut": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "poids": {
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "statut": {
+                "enum": [
+                  "Confirmé",
+                  "Déduit",
+                  "Estimé",
+                  "Hypothèse"
+                ]
+              }
+            }
+          }
+        },
+        "alertes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 120
+          },
+          "description": "Titres des points de vigilance."
+        },
+        "financementCentral": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "programme",
+              "miseP",
+              "rcd",
+              "miseMinimaleSuffisante"
+            ],
+            "properties": {
+              "programme": {
+                "type": "string"
+              },
+              "miseP": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "rcd": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "miseMinimaleSuffisante": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "vendeur": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "produitNetVendeur",
+                "impotEstime",
+                "statut"
+              ],
+              "properties": {
+                "produitNetVendeur": {
+                  "anyOf": [
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "impotEstime": {
+                  "anyOf": [
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "statut": {
+                  "const": "Estimé"
+                }
+              }
+            }
+          ],
+          "description": "null par défaut. Présent seulement si P-O approuve l'envoi du volet vendeur ET que la personne l'a activé."
+        }
+      }
+    },
+    "hp": {
+      "type": "string",
+      "maxLength": 0,
+      "description": "Anti-pollution (honeypot) : doit être vide. Un champ rempli = robot, le serveur ignore la requête."
+    }
+  }
+}
