@@ -149,6 +149,48 @@
       </div>
     </section>
 
+    <section class="rendement pas-imprimer" id="rendement" aria-labelledby="rendement-titre">
+      <h2 id="rendement-titre">Indicateurs de rendement</h2>
+      <p class="aide">Situation actuelle, vue prudente, dépenses détaillées. Le calcul se fait dans votre navigateur.</p>
+      <button type="button" id="btn-rendement" class="bouton">Calculer les indicateurs</button>
+      <div id="rendement-corps"></div>
+      <details>
+        <summary>Limites de zonage saisies</summary>
+        <div class="grille cols-2" id="champs-zonage-rendement"></div>
+      </details>
+    </section>
+
+    <section class="zonage" id="zonage" aria-labelledby="zonage-titre">
+      <h2 id="zonage-titre">Références de zonage</h2>
+      <div class="avertissement-zonage">
+        <p>Les renseignements sur le zonage fournis ici le sont à titre de référence seulement. Ils peuvent avoir changé. Le règlement officiel de la municipalité a préséance. Vérifiez les normes applicables auprès du service d'urbanisme de la municipalité concernée avant toute décision.</p>
+        <p>Ces renseignements ne constituent pas une promesse de potentiel de développement, ni une assurance qu'une modification au zonage sera accordée, ni un avis juridique ou un avis d'urbanisme. Ils ne remplacent pas la consultation du règlement en vigueur ni une demande officielle auprès de la municipalité.</p>
+        <p>Présenté par l'Équipe Chiasson De Francesco, RE/MAX D'ABORD.</p>
+      </div>
+      <div class="champ">
+        <label for="zonage-muni">Municipalité</label>
+        <select id="zonage-muni"></select>
+      </div>
+      <div id="zonage-corps"></div>
+    </section>
+
+    <section class="residuel pas-imprimer" id="residuel" aria-labelledby="residuel-titre">
+      <h2 id="residuel-titre">Valeur résiduelle du terrain</h2>
+      <p class="aide">Les paramètres de zonage sont saisis ici. Logements = minimum de la grille, du COS et de l'emprise × étages.</p>
+      <div class="grille cols-2">
+        <div class="champ"><label for="f_tM2">Superficie du terrain (m²)</label><input id="f_tM2" type="text" inputmode="decimal" autocomplete="off" spellcheck="false"></div>
+        <div class="champ"><label for="f_prixT">Prix du terrain ($)</label><input id="f_prixT" type="text" inputmode="decimal" autocomplete="off" spellcheck="false"></div>
+        <div class="champ"><label for="f_supLog">Superficie par logement (m²)</label><input id="f_supLog" type="text" inputmode="decimal" autocomplete="off" spellcheck="false"></div>
+        <div class="champ"><label for="f_s1Nom">Scénario</label><input id="f_s1Nom" type="text" autocomplete="off" spellcheck="false" maxlength="80"></div>
+        <div class="champ"><label for="f_s1Grille">Maximum de la grille</label><input id="f_s1Grille" type="text" inputmode="numeric" autocomplete="off" spellcheck="false"></div>
+        <div class="champ"><label for="f_s1Cos">COS</label><input id="f_s1Cos" type="text" inputmode="decimal" autocomplete="off" spellcheck="false"></div>
+        <div class="champ"><label for="f_s1Empr">Emprise (%)</label><input id="f_s1Empr" type="text" inputmode="decimal" autocomplete="off" spellcheck="false"></div>
+        <div class="champ"><label for="f_s1Et">Étages</label><input id="f_s1Et" type="text" inputmode="numeric" autocomplete="off" spellcheck="false"></div>
+      </div>
+      <button type="button" id="btn-residuel" class="bouton">Calculer la valeur résiduelle</button>
+      <div id="residuel-corps"></div>
+    </section>
+
     <section class="hypotheses" id="hypotheses">
       <h2>Hypothèses et statuts</h2>
       <p id="legende-statuts">Statuts : Confirmé (source officielle citée), Déduit (calculé des données saisies), Estimé (source secondaire, à valider), Hypothèse (valeur de travail modifiable).</p>

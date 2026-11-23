@@ -2,6 +2,6 @@
   "name": "vendremonplex",
   "private": true,
   "scripts": {
-    "test": "node calculateur/tests.js && node calculateur/tests_v2.js"
+    "test": "node calculateur/tests.js && node calculateur/tests_v2.js && node calculateur/tests_v3.js"
   }
 }

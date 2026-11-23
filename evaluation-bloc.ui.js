@@ -14,6 +14,36 @@ import {
   x,
 } from "./calculateur/evaluation_bloc.js";
 import { validerContact } from "./calculateur/donnees_v2.js";
+import {
+  evaluerRendement,
+  evaluerResiduel,
+  referencesZonage,
+  TEXTES_ZONAGE_V3,
+  zonageReferencesCatalog,
+} from "./calculateur/evaluation_bloc_v3.js";
+
+const ZONAGE_REND = [
+  ["zMax", "Maximum de la grille"],
+  ["zCos", "COS"],
+  ["zImpl", "Implantation (%)"],
+  ["zEtages", "Étages"],
+  ["zTerrain", "Terrain (m²)"],
+  ["zSupLog", "Superficie par logement (m²)"],
+  ["zLotBase", "Terrain de base (m²)"],
+  ["zLotBaseLog", "Logements de base"],
+  ["zLotAdd", "Terrain additionnel par logement (m²)"],
+  ["zCpl", "Cases par logement"],
+  ["zCases", "Cases de stationnement"],
+];
+const PRIORITE_LIEN = [
+  "Grille de spécifications",
+  "Grilles d'usage",
+  "Carte interactive de zonage",
+  "Plan de zonage",
+  "Règlement de zonage",
+  "Page des règlements d'urbanisme",
+  "Page d'urbanisme",
+];
 
 const CLES_TYPE = ["n0", "n1", "n2", "n3", "taxesMun", "taxesScol", "assur", "energie", "entretien", "reserve", "autres", "gestion"];
 const CLES_VILLE = ["l0", "l1", "l2", "l3", "inoc", "facteur"];
@@ -694,6 +724,210 @@ function init() {
   document.getElementById("f_srcMrn").addEventListener("change", majVisibilite);
   document.getElementById("btn-imprimer").addEventListener("click", () => window.print());
   document.getElementById("btn-calcul-haut").addEventListener("click", () => form.requestSubmit());
+  preparerModulesV3();
+}
+
+function fmtRatio(v) {
+  return Number.isFinite(v) ? pct(v) : "—";
+}
+
+function fmtMultiple(v) {
+  if (!Number.isFinite(v)) return "—";
+  return `${new Intl.NumberFormat("fr-CA", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(v)} ×`;
+}
+
+function lireZonageRendement() {
+  const o = {};
+  for (const [cle] of ZONAGE_REND) {
+    const el = document.getElementById(`f_${cle}`);
+    o[cle] = el && el.value.trim() !== "" ? el.value : 0;
+  }
+  return o;
+}
+
+function metrique(libelle, valeur) {
+  const wrap = document.createElement("div");
+  const dt = document.createElement("dt");
+  dt.textContent = libelle;
+  const dd = document.createElement("dd");
+  dd.textContent = valeur;
+  wrap.append(dt, dd);
+  return wrap;
+}
+
+function afficherRendement() {
+  const r = evaluerRendement({ ...lireEntrees(), ...lireZonageRendement() });
+  const corps = document.getElementById("rendement-corps");
+  corps.replaceChildren();
+  if (r.avertissementDefauts) {
+    const note = document.createElement("p");
+    note.className = "mention";
+    note.textContent = r.avertissementDefauts;
+    corps.append(note);
+  }
+  const prix = document.createElement("p");
+  prix.textContent = r.prixSource === "valeur_centrale"
+    ? `Prix d'analyse : ${m(r.prix)} (valeur centrale de la fourchette).`
+    : `Prix d'analyse : ${m(r.prix)}.`;
+  const dl = document.createElement("dl");
+  dl.className = "metriques";
+  dl.append(
+    metrique("Cash-on-cash (année 1)", fmtRatio(r.cocAn1)),
+    metrique("TRI", r.tri == null ? "—" : pct(r.tri)),
+    metrique("VAN", m(r.van)),
+    metrique("MIRR", r.trim == null ? "—" : pct(r.trim)),
+    metrique("Multiple des capitaux", fmtMultiple(r.multiple)),
+    metrique("Point mort", fmtRatio(r.pointMort)),
+  );
+  corps.append(prix, dl);
+  if (r.zonage && r.zonage.limites.length) {
+    const h = document.createElement("h3");
+    h.textContent = "Logements permis par les limites saisies";
+    const table = document.createElement("table");
+    const body = document.createElement("tbody");
+    for (const li of r.zonage.limites) {
+      const tr = document.createElement("tr");
+      const th = document.createElement("th");
+      th.scope = "row";
+      th.textContent = li.label;
+      const td = document.createElement("td");
+      td.textContent = String(li.val);
+      tr.append(th, td);
+      body.append(tr);
+    }
+    const tr = document.createElement("tr");
+    const th = document.createElement("th");
+    th.scope = "row";
+    th.textContent = "Limite retenue";
+    const td = document.createElement("td");
+    td.textContent = `${r.zonage.permis} (${r.zonage.contrainte})`;
+    tr.append(th, td);
+    body.append(tr);
+    table.append(body);
+    corps.append(h, table);
+  }
+}
+
+function lienAffichable(entree) {
+  if (!entree || !entree.url) return false;
+  if (entree.aRetravailler) return false;
+  if (entree.statutAcces === "404" || entree.statutHttp === 404) return false;
+  return true;
+}
+
+function afficherZonage() {
+  const demandee = document.getElementById("zonage-muni").value;
+  const ref = referencesZonage(demandee);
+  const corps = document.getElementById("zonage-corps");
+  corps.replaceChildren();
+  const visibles = (ref.entrees || [])
+    .filter(lienAffichable)
+    .slice()
+    .sort((a, b) => {
+      const ia = PRIORITE_LIEN.indexOf(a.typeDocument);
+      const ib = PRIORITE_LIEN.indexOf(b.typeDocument);
+      return (ia === -1 ? PRIORITE_LIEN.length : ia) - (ib === -1 ? PRIORITE_LIEN.length : ib);
+    });
+  if (!visibles.length) {
+    const p = document.createElement("p");
+    p.className = "ligne-verification";
+    p.textContent = TEXTES_ZONAGE_V3.verificationGenerique;
+    corps.append(p);
+    return;
+  }
+  const muni = ref.municipalite;
+  for (const lien of visibles) {
+    const art = document.createElement("article");
+    const h = document.createElement("h3");
+    h.textContent = lien.typeDocument;
+    const p = document.createElement("p");
+    p.className = "ligne-verification";
+    p.append(`Vérifiez les normes applicables auprès du service d'urbanisme de ${muni} avant toute décision. Le règlement officiel de la municipalité a préséance. Consultez : `);
+    const a = document.createElement("a");
+    a.href = lien.url;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    a.textContent = lien.url;
+    const hors = document.createElement("span");
+    hors.className = "visually-hidden";
+    hors.textContent = " (s'ouvre dans un nouvel onglet)";
+    a.append(hors);
+    p.append(a, ` (${lien.typeDocument}).`);
+    art.append(h, p);
+    corps.append(art);
+  }
+}
+
+function afficherResiduel() {
+  const corps = document.getElementById("residuel-corps");
+  corps.replaceChildren();
+  const valeurs = ["f_tM2", "f_prixT", "f_supLog", "f_s1Grille", "f_s1Cos", "f_s1Empr", "f_s1Et"].map((id) => document.getElementById(id).value.trim());
+  if (valeurs.every((v) => v === "")) {
+    const p = document.createElement("p");
+    p.textContent = "Saisissez la superficie, le prix et au moins un paramètre de zonage (grille, COS ou emprise et étages).";
+    corps.append(p);
+    return;
+  }
+  const R = evaluerResiduel({
+    tM2: document.getElementById("f_tM2").value,
+    prixT: document.getElementById("f_prixT").value,
+    supLog: document.getElementById("f_supLog").value,
+    ville: document.getElementById("f_ville")?.value || "sherbrooke",
+    scenarios: [{
+      nom: document.getElementById("f_s1Nom").value || "Scénario 1",
+      grille: document.getElementById("f_s1Grille").value,
+      cos: document.getElementById("f_s1Cos").value,
+      emprise: document.getElementById("f_s1Empr").value,
+      etages: document.getElementById("f_s1Et").value,
+    }],
+  });
+  const repliExemple = (R.defautsAppliques || []).some((k) => k === "tM2" || k === "prixT" || k === "scenarios");
+  if (repliExemple && R.avertissement) {
+    const note = document.createElement("p");
+    note.className = "mention";
+    note.textContent = R.avertissement;
+    corps.append(note);
+  }
+  const s = R.scen[0];
+  const dl = document.createElement("dl");
+  dl.className = "metriques";
+  dl.append(
+    metrique("Logements (grille, COS, emprise × étages)", s ? String(s.n) : "—"),
+    metrique("Valeur résiduelle", s ? m(s.res) : "—"),
+    metrique("Prix maximal", m(R.prixMax)),
+  );
+  corps.append(dl);
+}
+
+function preparerModulesV3() {
+  const hote = document.getElementById("champs-zonage-rendement");
+  for (const [cle, libelle] of ZONAGE_REND) {
+    const wrap = document.createElement("div");
+    wrap.className = "champ";
+    const label = document.createElement("label");
+    label.htmlFor = `f_${cle}`;
+    label.textContent = libelle;
+    const input = document.createElement("input");
+    input.id = `f_${cle}`;
+    input.type = "text";
+    input.inputMode = "decimal";
+    input.autocomplete = "off";
+    input.spellcheck = false;
+    wrap.append(label, input);
+    hote.append(wrap);
+  }
+  const sel = document.getElementById("zonage-muni");
+  for (const nom of zonageReferencesCatalog.municipalites || []) {
+    const opt = document.createElement("option");
+    opt.value = nom;
+    opt.textContent = nom;
+    if (nom === "Sherbrooke") opt.selected = true;
+    sel.append(opt);
+  }
+  sel.addEventListener("change", afficherZonage);
+  afficherZonage();
+  document.getElementById("btn-rendement").addEventListener("click", afficherRendement);
+  document.getElementById("btn-residuel").addEventListener("click", afficherResiduel);
 }
 
 init();

@@ -509,11 +509,24 @@ th { color: var(--texte-doux); font-size: 0.75rem; letter-spacing: 0.04em; text-
 
 .limites,
 .hypotheses,
-.appel {
+.appel,
+.coordonnees,
+.rendement,
+.zonage,
+.residuel {
   width: min(1180px, calc(100% - 2rem));
   margin: 1rem auto 0;
   padding: 1rem 1rem 1.1rem;
+  background: #fff;
+  border: 1px solid var(--ligne);
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre);
 }
+
+.avertissement-zonage p { margin: 0 0 0.75rem; }
+.avertissement-zonage p:last-child { margin-bottom: 0; }
+.zonage a { overflow-wrap: anywhere; }
+.ligne-verification { margin: 0.35rem 0 0.9rem; }
 
 .limites ul,
 .appel ul { margin: 0.4rem 0 0; padding-left: 1.15rem; }
@@ -660,7 +673,11 @@ th { color: var(--texte-doux); font-size: 0.75rem; letter-spacing: 0.04em; text-
   .disposition,
   .limites,
   .hypotheses,
-  .appel { width: min(1180px, calc(100% - 4rem)); }
+  .appel,
+  .coordonnees,
+  .rendement,
+  .zonage,
+  .residuel { width: min(1180px, calc(100% - 4rem)); }
 }
 
 @media (min-width: 1100px) {

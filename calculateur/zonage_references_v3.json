@@ -1,0 +1,673 @@
+{
+  "dateVerification": "2026-11-23",
+  "fuseau": "America/Toronto",
+  "perimetre": "Municipalités principales de l'Estrie. Granby et le reste de la Montérégie sont exclus.",
+  "methode": "Chaque URL a été interrogee par requête HTTP(S) le 2026-11-23 (fuseau America/Toronto). Les réponses 404 sont exclues. Les 403, délais et erreurs TLS sont conservés et signalés dans statutAcces. Une réponse 200 confirme que le document chargeait ce jour-là, non qu'il est à jour ni qu'il a force officielle exclusive (le règlement en vigueur au greffe a préséance).",
+  "avertissement": "Les renseignements sur le zonage fournis ici le sont à titre de référence seulement. Ils peuvent avoir changé. Le règlement officiel de la municipalité a préséance. Vérifiez les normes applicables auprès du service d'urbanisme de la municipalité concernée avant toute décision. Textes d'interface : textes_a_approuver_v3.md (À approuver par P-O).",
+  "liensVerifies": 66,
+  "liensRetenus": 65,
+  "liensOk": 62,
+  "liensConservesAvecReserve": 3,
+  "liens404Exclus": [
+    {
+      "municipalite": "Lac-Mégantic",
+      "typeDocument": "Règlement de zonage",
+      "url": "https://contenu.maruche.ca/Fichiers/b3dde24a-48cc-ef11-951c-00155d000503/CustomFields/4e57f34c-fcbf-e711-810c-10155d19750f/c89c5f63-9021-45f7-9855-34a79ecc2c3a/Reglement-no-1324-2024-02-Avec-grilles-et-annexes-2.pdf",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 404
+    }
+  ],
+  "municipalites": [
+    "Ascot Corner",
+    "Coaticook",
+    "Compton",
+    "Cookshire-Eaton",
+    "East Angus",
+    "Lac-Mégantic",
+    "Magog",
+    "North Hatley",
+    "Orford",
+    "Saint-Denis-de-Brompton",
+    "Sherbrooke",
+    "Stoke",
+    "Val-des-Sources",
+    "Val-Joli",
+    "Waterville",
+    "Windsor"
+  ],
+  "entrees": [
+    {
+      "municipalite": "Sherbrooke",
+      "typeDocument": "Carte interactive de zonage",
+      "url": "https://cartes.ville.sherbrooke.qc.ca/carteGlobale/?cat=zonage&theme=urbanisme",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 3763,
+      "note": "Application cartographique officielle de la Ville (thème urbanisme / zonage)."
+    },
+    {
+      "municipalite": "Sherbrooke",
+      "typeDocument": "Grilles d'usage",
+      "url": "https://cartes.ville.sherbrooke.qc.ca/GrilleUsage/",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 1219,
+      "note": "Outil officiel des grilles d'usage; une zone précise s'ouvre typiquement avec le paramètre zoneid (ex. ?zoneid=H0419)."
+    },
+    {
+      "municipalite": "Sherbrooke",
+      "typeDocument": "Règlement de zonage",
+      "url": "https://contenu.maruche.ca/Fichiers/3337a882-4a53-e611-80ea-00155d09650f/Sites/333dd3d3-915d-e611-80ea-00155d09650f/Documents/Reglements%20municipaux/Urbanisme/Reglement-1200-texte.pdf",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 7420166,
+      "note": "Règlement 1200, version administrative (la copie officielle est au greffe). Mention de période « Version administrative à jour » sur le document."
+    },
+    {
+      "municipalite": "Sherbrooke",
+      "typeDocument": "Données ouvertes — zonage",
+      "url": "https://www.donneesquebec.ca/recherche/dataset/ae984df25d12471f9f3de4b84b3e2a53_0",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 68799,
+      "note": "Jeu de données de zonage de Sherbrooke sur Données Québec."
+    },
+    {
+      "municipalite": "Sherbrooke",
+      "typeDocument": "Plan d'urbanisme",
+      "url": "https://www.sherbrooke.ca/fr/projets-majeurs/16/plan-d-urbanisme",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 222536
+    },
+    {
+      "municipalite": "Magog",
+      "typeDocument": "Page d'urbanisme",
+      "url": "https://www.ville.magog.qc.ca/informations-services/permis/",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 254358,
+      "note": "Page officielle des permis / urbanisme."
+    },
+    {
+      "municipalite": "Magog",
+      "typeDocument": "Carte interactive de zonage",
+      "url": "https://www.ville.magog.qc.ca/informations-services/cartes-interactives/",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 98736,
+      "note": "Page officielle des cartes interactives. Une autre page du site a indiqué que la carte interactive pouvait être temporairement indisponible : vérifier l'état au moment de l'utilisation."
+    },
+    {
+      "municipalite": "Magog",
+      "typeDocument": "Page des règlements d'urbanisme",
+      "url": "https://www.ville.magog.qc.ca/ville-de-magog/politiques-et-reglements/",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 128695,
+      "note": "Section Politiques et règlements (ancrage #urbanisme)."
+    },
+    {
+      "municipalite": "Magog",
+      "typeDocument": "Règlement de zonage",
+      "url": "https://www.ville.magog.qc.ca/wp-content/uploads/2023/04/3458-2024-U-Zonage-lotissement-Version-administrative-2026-11-05.pdf",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 11098132,
+      "note": "Règlement 3458-2024 (zonage et lotissement), version administrative datée du 2026-11-05 sur le fichier."
+    },
+    {
+      "municipalite": "Magog",
+      "typeDocument": "Plan de zonage",
+      "url": "https://www.ville.magog.qc.ca/wp-content/uploads/2023/04/3458-2024-U-Zonage-lotissement-Annexe-A-3537-2026.pdf",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 13900014,
+      "note": "Annexe A du règlement 3458-2024 (amendement 3537-2026)."
+    },
+    {
+      "municipalite": "Magog",
+      "typeDocument": "Grille de spécifications",
+      "url": "https://www.ville.magog.qc.ca/wp-content/uploads/2023/04/3458-2024-U-Zonage-lotissement-Annexe-B-3537-2026.pdf",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 2779170,
+      "note": "Annexe B du règlement 3458-2024 (amendement 3537-2026)."
+    },
+    {
+      "municipalite": "Coaticook",
+      "typeDocument": "Page d'urbanisme",
+      "url": "https://www.coaticook.ca/fr/services/urbanisme.php",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 32412
+    },
+    {
+      "municipalite": "Coaticook",
+      "typeDocument": "Page des règlements d'urbanisme",
+      "url": "https://www.coaticook.ca/fr/services/permis-et-reglements.php",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 78551,
+      "note": "Index officiel des règlements d'urbanisme, y compris le zonage no 6-1-2002 (version refondue au 19 août 2024) et les grilles des normes, publiés en fascicules PDF."
+    },
+    {
+      "municipalite": "Coaticook",
+      "typeDocument": "Plan de zonage",
+      "url": "https://www.coaticook.ca/fr/ville/cartes.php",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 33567,
+      "note": "Page officielle des cartes de la Ville."
+    },
+    {
+      "municipalite": "Coaticook",
+      "typeDocument": "Règlement de zonage",
+      "url": "https://www.coaticook.ca/upload/DOCUMENTS/Permis-Reglements/Zonage-no6-1-2002/page%20version%20refondue%20(%C3%A0%20jour%2019%20ao%C3%BBt%202024).pdf",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 308359,
+      "note": "Page de version refondue du règlement de zonage no 6-1-2002, à jour au 19 août 2024. Les chapitres sont des PDF distincts sur la même page d'index."
+    },
+    {
+      "municipalite": "Coaticook",
+      "typeDocument": "Table des matières du règlement de zonage",
+      "url": "https://www.coaticook.ca/upload/DOCUMENTS/Permis-Reglements/Zonage-no6-1-2002/table%20des%20mati%C3%A8res%20g%C3%A9n%C3%A9rale%20zonage%20(%C3%A0%20jour%2019%20ao%C3%BBt%202024).pdf",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 354519,
+      "note": "Table des matières générale, à jour au 19 août 2024."
+    },
+    {
+      "municipalite": "Cookshire-Eaton",
+      "typeDocument": "Page des règlements d'urbanisme",
+      "url": "https://cookshire-eaton.qc.ca/citoyens/services-municipaux/reglementation/",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 214523
+    },
+    {
+      "municipalite": "Cookshire-Eaton",
+      "typeDocument": "Règlement de zonage",
+      "url": "https://cookshire-eaton.qc.ca/wp-content/uploads/2024/01/286-2021-Zonage.pdf",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 1937219,
+      "note": "Règlement 286-2021."
+    },
+    {
+      "municipalite": "Cookshire-Eaton",
+      "typeDocument": "Grille de spécifications",
+      "url": "https://cookshire-eaton.qc.ca/wp-content/uploads/2024/01/286-2021-Zonage-Grille_V66.pdf",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 532108,
+      "note": "Grille associée au règlement 286-2021 (fichier V66)."
+    },
+    {
+      "municipalite": "Windsor",
+      "typeDocument": "Page d'urbanisme",
+      "url": "https://www.villedewindsor.qc.ca/urbanisme-territoire-environnement/",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 108715
+    },
+    {
+      "municipalite": "Windsor",
+      "typeDocument": "Page des règlements d'urbanisme",
+      "url": "https://www.villedewindsor.qc.ca/services-aux-citoyens/reglements-municipaux/",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 146771
+    },
+    {
+      "municipalite": "Windsor",
+      "typeDocument": "Règlement de zonage",
+      "url": "https://www.villedewindsor.qc.ca/wp-content/uploads/2026/10/2_Reglement-de-zonage_2026-06-22.pdf",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 7508036,
+      "note": "Codification administrative du règlement de zonage (fichier daté du 2026-06-22). La Ville indique généralement que seule la copie officielle au greffe a une valeur légale."
+    },
+    {
+      "municipalite": "Windsor",
+      "typeDocument": "Plan de zonage",
+      "url": "https://www.villedewindsor.qc.ca/wp-content/uploads/2025/11/MJ-41_Mai-2024-Zonage.pdf",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 9561094,
+      "note": "Document de zonage (mai 2024) publié par la Ville; confirmer s'il s'agit du plan officiel en vigueur."
+    },
+    {
+      "municipalite": "Val-des-Sources",
+      "typeDocument": "Page des règlements d'urbanisme",
+      "url": "https://valdessources.ca/a-propos-de-la-ville/reglements-municipaux/",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 230590,
+      "note": "Index officiel. Certains règlements de base restent hébergés sur ville.asbestos.qc.ca (ancien nom de la municipalité)."
+    },
+    {
+      "municipalite": "Val-des-Sources",
+      "typeDocument": "Carte interactive de zonage",
+      "url": "https://valdessources.ca/carte-interactive/",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 247473
+    },
+    {
+      "municipalite": "Val-des-Sources",
+      "typeDocument": "Règlement de zonage",
+      "url": "https://ville.asbestos.qc.ca/wp-content/uploads/2019/03/2006-116-zonage.pdf",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 1363263,
+      "note": "Règlement 2006-116, toujours lié depuis le site actuel; hébergé sur le domaine de l'ancien nom (Asbestos). À lire avec les amendements postérieurs."
+    },
+    {
+      "municipalite": "Val-des-Sources",
+      "typeDocument": "Plan de zonage",
+      "url": "https://ville.asbestos.qc.ca/wp-content/uploads/2019/03/2006-116-plan-zonage.pdf",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 3838472,
+      "note": "Plan associé au 2006-116, même réserve (amendements postérieurs, dont la carte 2025-408)."
+    },
+    {
+      "municipalite": "Val-des-Sources",
+      "typeDocument": "Grille de spécifications",
+      "url": "https://valdessources.ca/wp-content/uploads/2023/02/grilles-zonage-1-1.pdf",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 5668299,
+      "note": "Grilles de zonage publiées par la Ville (fichier 1)."
+    },
+    {
+      "municipalite": "Val-des-Sources",
+      "typeDocument": "Grille de spécifications (suite)",
+      "url": "https://valdessources.ca/wp-content/uploads/2023/02/grille-zonage-2.pdf",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 4007481,
+      "note": "Grilles de zonage publiées par la Ville (fichier 2)."
+    },
+    {
+      "municipalite": "Val-des-Sources",
+      "typeDocument": "Plan de zonage (amendement 2025-408)",
+      "url": "https://valdessources.ca/wp-content/uploads/2025/11/2025-408-Carte-de-zonage-compresse.pdf",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 9882162,
+      "note": "Carte de zonage liée à l'amendement 2025-408 (création de zones, août 2025)."
+    },
+    {
+      "municipalite": "Lac-Mégantic",
+      "typeDocument": "Page des règlements d'urbanisme",
+      "url": "https://www.ville.lac-megantic.qc.ca/fr/la-ville/reglements-municipaux/urbanisme",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 330931
+    },
+    {
+      "municipalite": "Lac-Mégantic",
+      "typeDocument": "Carte interactive de zonage",
+      "url": "https://www.ville.lac-megantic.qc.ca/fr/carte-interactive",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 245981
+    },
+    {
+      "municipalite": "East Angus",
+      "typeDocument": "Page d'urbanisme",
+      "url": "https://eastangus.ca/citoyens/urbanisme/",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 1493934
+    },
+    {
+      "municipalite": "East Angus",
+      "typeDocument": "Page des règlements d'urbanisme",
+      "url": "https://eastangus.ca/citoyens/urbanisme/permis-et-reglements-2/",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 1579580
+    },
+    {
+      "municipalite": "East Angus",
+      "typeDocument": "Règlement de zonage",
+      "url": "https://eastangus.ca/wp-content/uploads/2026/06/Reglement-745-ZONAGE-VERSION-ADMINISTRATIVE-1.pdf",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 1518097,
+      "note": "Règlement 745, version administrative."
+    },
+    {
+      "municipalite": "East Angus",
+      "typeDocument": "Plan de zonage",
+      "url": "https://eastangus.ca/wp-content/uploads/2022/05/REGLEMENT-745-CARTE-Zonage-.pdf",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 7421345,
+      "note": "Carte de zonage du règlement 745."
+    },
+    {
+      "municipalite": "East Angus",
+      "typeDocument": "Grille de spécifications",
+      "url": "https://eastangus.ca/wp-content/uploads/2026/06/Reglement-745-GRILLE-de-specifications_reglement-861-.pdf",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 191725,
+      "note": "Grille de spécifications (règlement 861, associée au 745)."
+    },
+    {
+      "municipalite": "Orford",
+      "typeDocument": "Page des règlements d'urbanisme",
+      "url": "https://canton.orford.qc.ca/municipalite/reglements-et-politiques/",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 0,
+      "statutAcces": "delai_ou_tls",
+      "octets": 0,
+      "note": "Accès non confirmé le 2026-11-23 (délai ou TLS : curl: (92) HTTP/2 stream 1 was not closed cleanly: PROTOCOL_ERROR (err 1)). Conservé comme référence officielle, à retrier.",
+      "aRetravailler": true
+    },
+    {
+      "municipalite": "Orford",
+      "typeDocument": "Grille de spécifications",
+      "url": "https://canton.orford.qc.ca/wp-content/uploads/2025/12/951_Zonage-et-lotissement-Annexe-3-Grilles-Complet_20251211.pdf",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 0,
+      "statutAcces": "delai_ou_tls",
+      "octets": 0,
+      "note": "Annexe 3 du règlement 951 (grilles des usages et des spécifications), fichier du 2025-12-11. Accès non confirmé le 2026-11-23 (délai ou TLS : curl: (92) HTTP/2 stream 1 was not closed cleanly: PROTOCOL_ERROR (err 1)). Conservé comme référence officielle, à retrier.",
+      "aRetravailler": true
+    },
+    {
+      "municipalite": "Orford",
+      "typeDocument": "Règlement de zonage",
+      "url": "https://canton.orford.qc.ca/wp-content/uploads/2023/01/Reglement-Zonage-et-lotissement-951-7-1-PE_VF.pdf",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 0,
+      "statutAcces": "delai_ou_tls",
+      "octets": 0,
+      "note": "Document publié par le Canton relatif au règlement 951 (vérifier s'il s'agit du texte complet ou d'un amendement). Accès non confirmé le 2026-11-23 (délai ou TLS : curl: (92) HTTP/2 stream 1 was not closed cleanly: PROTOCOL_ERROR (err 1)). Conservé comme référence officielle, à retrier.",
+      "aRetravailler": true
+    },
+    {
+      "municipalite": "North Hatley",
+      "typeDocument": "Page des règlements d'urbanisme",
+      "url": "https://www.northhatley.org/fr/municipalite/renseignements-generaux/reglements-municipaux/",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 74519
+    },
+    {
+      "municipalite": "North Hatley",
+      "typeDocument": "Règlement de zonage",
+      "url": "https://www.northhatley.org/wp-content/uploads/2021/10/2001-432-ZONAGE.pdf",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 1907799,
+      "note": "Règlement 2001-432. À lire avec les amendements postérieurs (notamment 2022-653 et 2022-657)."
+    },
+    {
+      "municipalite": "North Hatley",
+      "typeDocument": "Plan de zonage",
+      "url": "https://www.northhatley.org/wp-content/uploads/2021/11/Plan-Zonage-no.-6-0798-Z.pdf",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 1465964
+    },
+    {
+      "municipalite": "North Hatley",
+      "typeDocument": "Amendement au règlement de zonage",
+      "url": "https://www.northhatley.org/wp-content/uploads/2023/02/2022-653-modifiant-le-reglement-de-zonage-2001-432.pdf",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 235230,
+      "note": "Règlement 2022-653 modifiant le 2001-432."
+    },
+    {
+      "municipalite": "Compton",
+      "typeDocument": "Page des règlements d'urbanisme",
+      "url": "https://www.compton.ca/municipalite/reglements-durbanisme/",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 150389
+    },
+    {
+      "municipalite": "Compton",
+      "typeDocument": "Règlement de zonage",
+      "url": "https://www.compton.ca/wp-content/uploads/2026/05/2020-166-Zonage-EEV-13-mai-2026.pdf",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 3851405,
+      "note": "Règlement 2020-166, version indiquée en vigueur au 13 mai 2026 sur le nom du fichier."
+    },
+    {
+      "municipalite": "Compton",
+      "typeDocument": "Plan de zonage",
+      "url": "https://www.compton.ca/wp-content/uploads/2024/06/Plan-de-zonage-annexe-2.0-scaled.jpg",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 758097,
+      "note": "Annexe (plan de zonage) publiée par la municipalité."
+    },
+    {
+      "municipalite": "Compton",
+      "typeDocument": "Cartes municipales",
+      "url": "https://www.compton.ca/milieu-de-vie/cartes-de-compton/",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 114174
+    },
+    {
+      "municipalite": "Waterville",
+      "typeDocument": "Page des règlements d'urbanisme",
+      "url": "https://www.waterville.ca/fr/ville/reglements-urbanisme.php",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 63501
+    },
+    {
+      "municipalite": "Waterville",
+      "typeDocument": "Règlement de zonage",
+      "url": "https://www.waterville.ca/upload/reglements-urbanisme/WAT_regl_zonage_admin_juin_2024_R%C3%A8gl.%20614.pdf",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 2068644,
+      "note": "Règlement 614, version administrative de juin 2024."
+    },
+    {
+      "municipalite": "Waterville",
+      "typeDocument": "Grille de spécifications",
+      "url": "https://www.waterville.ca/upload/reglements-urbanisme/WAT_regl_zonage_admin_juin_2024_grille_specification.pdf",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 630587,
+      "note": "Grille des spécifications, juin 2024."
+    },
+    {
+      "municipalite": "Waterville",
+      "typeDocument": "Grille de spécifications (fichier alternatif)",
+      "url": "https://www.waterville.ca/upload/reglements-urbanisme/WAT_regl_zonage_admin_juin_2024_grille_specification-1.pdf",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 630587,
+      "note": "Second fichier de grilles publié à côté du précédent; on ne conserve que s'il charge (HTTP 200)."
+    },
+    {
+      "municipalite": "Stoke",
+      "typeDocument": "Page d'urbanisme",
+      "url": "https://stoke.ca/environnement-et-urbanisme/urbanisme/",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 287870
+    },
+    {
+      "municipalite": "Stoke",
+      "typeDocument": "Page des règlements d'urbanisme",
+      "url": "https://stoke.ca/municipalite/avis-reglements-et-politiques/reglements/",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 306167,
+      "note": "Les PDF de zonage n'étaient pas tous exposés en href statique au moment de la lecture; consulter aussi la page Cartes et plans."
+    },
+    {
+      "municipalite": "Stoke",
+      "typeDocument": "Plan de zonage",
+      "url": "https://stoke.ca/wp-content/uploads/2025/12/Carte-zonage_Sept2023.pdf",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 12021661,
+      "note": "Carte de zonage (septembre 2023) publiée par la municipalité."
+    },
+    {
+      "municipalite": "Stoke",
+      "typeDocument": "Cartes et plans",
+      "url": "https://stoke.ca/environnement-et-urbanisme/urbanisme/cartes-et-plans/",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 294691
+    },
+    {
+      "municipalite": "Ascot Corner",
+      "typeDocument": "Page d'urbanisme",
+      "url": "https://ascot-corner.com/services-citoyens/urbanisme/",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 106070,
+      "note": "Site officiel identifié : ascot-corner.com (le domaine ascotcorner.ca est une vitrine minimale)."
+    },
+    {
+      "municipalite": "Ascot Corner",
+      "typeDocument": "Règlement de zonage",
+      "url": "https://ascot-corner.com/wp-content/uploads/2026/04/642-Reglement-de-zonage-1-avril-2026.pdf",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 3839672,
+      "note": "Règlement 642, codification au 1er avril 2026 selon le nom du fichier."
+    },
+    {
+      "municipalite": "Ascot Corner",
+      "typeDocument": "Plan de zonage",
+      "url": "https://ascot-corner.com/wp-content/uploads/2026/04/642-Plan-de-zonage-1-de-2-2026-03-18.pdf",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 1971502,
+      "note": "Plan de zonage du règlement 642, feuillet 1 de 2 (2026-03-18)."
+    },
+    {
+      "municipalite": "Saint-Denis-de-Brompton",
+      "typeDocument": "Page d'urbanisme",
+      "url": "https://www.sddb.ca/fr/services-aux-citoyens/urbanisme-et-amenagement-du-territoire",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 73260,
+      "note": "Site officiel identifié : sddb.ca."
+    },
+    {
+      "municipalite": "Saint-Denis-de-Brompton",
+      "typeDocument": "Page des règlements d'urbanisme",
+      "url": "https://www.sddb.ca/fr/services-aux-citoyens/centre-documentaire/c366/reglements-d-urbanisme/page-1",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 166166
+    },
+    {
+      "municipalite": "Saint-Denis-de-Brompton",
+      "typeDocument": "Règlement de zonage",
+      "url": "https://www.sddb.ca/fr/services-aux-citoyens/centre-documentaire/c5392/reglement-de-zonage/page-1",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 130213,
+      "note": "Centre documentaire, règlement de zonage (no 474 et amendements, selon les avis publiés)."
+    },
+    {
+      "municipalite": "Val-Joli",
+      "typeDocument": "Page d'urbanisme",
+      "url": "https://www.val-joli.ca/fr/services-aux-citoyens/demande-de-permis-et-urbanisme/",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 55732
+    },
+    {
+      "municipalite": "Val-Joli",
+      "typeDocument": "Page des règlements d'urbanisme",
+      "url": "https://www.val-joli.ca/fr/municipalite/reglements-et-politiques/",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 58169
+    },
+    {
+      "municipalite": "Val-Joli",
+      "typeDocument": "Règlement de zonage",
+      "url": "https://www.val-joli.ca/fichiersUpload/fichiers/20251016162716-reg-zonage-maj-2025-08.pdf",
+      "dateVerification": "2026-11-23",
+      "statutHttp": 200,
+      "statutAcces": "ok",
+      "octets": 5350243,
+      "note": "Mise à jour du règlement de zonage (août 2025 selon le nom du fichier)."
+    }
+  ]
+}
