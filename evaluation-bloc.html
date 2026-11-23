@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estimation indicative de la valeur d'un plex ou d'un immeuble à revenus</title>
+    <meta name="description" content="Calculez une fourchette indicative selon vos loyers, vos dépenses et des ventes comparables que vous saisissez. Estimation indicative, pas une évaluation agréée.">
+    <link rel="canonical" href="https://vendremonplex.com/evaluation-bloc.html">
+    <meta name="author" content="Équipe Chiasson De Francesco">
+    <meta name="robots" content="index, follow">
+    <meta property="og:locale" content="fr_CA">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Vendremonplex.com">
+    <meta property="og:title" content="Estimation indicative de la valeur d'un plex ou d'un immeuble à revenus">
+    <meta property="og:description" content="Calculez une fourchette indicative selon vos loyers, vos dépenses et des ventes comparables que vous saisissez. Estimation indicative, pas une évaluation agréée.">
+    <meta property="og:url" content="https://vendremonplex.com/evaluation-bloc.html">
+    <meta name="theme-color" content="#030B1E">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Estimation indicative de la valeur d'un plex ou d'un immeuble à revenus",
+      "description": "Calculez une fourchette indicative selon vos loyers, vos dépenses et des ventes comparables que vous saisissez. Estimation indicative, pas une évaluation agréée.",
+      "url": "https://vendremonplex.com/evaluation-bloc.html",
+      "inLanguage": "fr-CA",
+      "applicationCategory": "BusinessApplication",
+      "isAccessibleForFree": true,
+      "provider": {
+        "@type": "Organization",
+        "name": "Équipe Chiasson De Francesco",
+        "url": "https://vendremonplex.com/"
+      }
+    }
+    </script>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23030B1E'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='16' font-family='Arial' fill='%23E11B22'%3EP%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="evaluation-bloc.css">
+</head>
+<body>
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+
+  <header class="entete">
+    <div class="entete-int">
+      <a class="marque" href="index.html">
+        <span class="marque-nom">Vendremon<span class="marque-accent">plex</span>.com</span>
+        <span class="marque-equipe">Équipe Chiasson De Francesco</span>
+      </a>
+      <nav class="nav" aria-label="Navigation">
+        <a href="index.html#expertise">Expertise</a>
+        <a href="index.html#temoignages">Performances</a>
+        <a href="evaluation-bloc.html" aria-current="page">Estimation indicative</a>
+        <a class="nav-tel" href="tel:+18199194631">819-919-4631</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <div class="bandeau" role="note">
+      <p><strong>Estimation indicative, pas une évaluation agréée ni un avis écrit de prix d'un courtier.</strong> Cet outil donne une fourchette à partir des données que vous saisissez et d'hypothèses modifiables. Ce n'est ni une évaluation par un évaluateur agréé, ni un avis écrit de prix d'un courtier. Un courtier de l'Équipe Chiasson De Francesco peut la valider avec vous à partir des baux, des comptes de taxes, des états financiers et de ventes comparables vérifiées.</p>
+    </div>
+
+    <div class="intro">
+      <p class="surtitre">Équipe Chiasson De Francesco</p>
+      <h1>Estimation indicative de la valeur d'un plex ou d'un immeuble à revenus</h1>
+      <p class="fournisseur">Outil présenté par l'Équipe Chiasson De Francesco, courtiers immobiliers, Sherbrooke.</p>
+      <p id="texte-a0" class="transition">Aucune donnée n'est transmise ni sauvegardée : tout le calcul se fait dans votre navigateur.</p>
+    </div>
+
+    <noscript>
+      <p class="noscript">Activez JavaScript pour utiliser le calcul. Aucune donnée n'est transmise ni sauvegardée : tout le calcul se fait dans votre navigateur.</p>
+    </noscript>
+
+    <p id="texte-b2" hidden>Estimation indicative : ni une évaluation par un évaluateur agréé, ni un avis écrit de prix d'un courtier. À valider avec le courtier à partir des baux, des comptes de taxes, des états financiers et de ventes comparables vérifiées.</p>
+    <p id="texte-insuffisant" hidden>Données insuffisantes : saisissez des loyers et des dépenses valides, ou des comparables.</p>
+    <p id="texte-b4" hidden>Statuts : Confirmé (source officielle citée), Déduit (calculé des données saisies), Estimé (source secondaire, à valider), Hypothèse (valeur de travail modifiable).</p>
+
+    <div class="disposition">
+      <div class="colonne-formulaire" id="colonne-formulaire"></div>
+      <div class="colonne-resultat">
+        <section id="resultat" aria-labelledby="resultat-titre">
+          <h2 id="resultat-titre" tabindex="-1">Sommaire d'évaluation indicative d'un immeuble à revenus</h2>
+          <button type="button" id="btn-calcul-haut" class="bouton seul-bureau">Calculer la fourchette</button>
+          <button type="button" id="btn-imprimer" class="bouton bouton-secondaire pas-imprimer" hidden>Imprimer le sommaire</button>
+          <p id="resultat-annonce" aria-live="polite" aria-atomic="true">
+            <span id="annonce-visible"></span>
+            <span id="annonce-chiffres" class="visually-hidden"></span>
+          </p>
+          <div id="resultat-corps">
+            <dl class="metriques">
+              <div><dt>Bas de la fourchette</dt><dd>—</dd></div>
+              <div class="centrale"><dt>Valeur centrale</dt><dd>—</dd></div>
+              <div><dt>Haut de la fourchette</dt><dd>—</dd></div>
+            </dl>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <section class="coordonnees pas-imprimer" id="coordonnees" aria-labelledby="coordonnees-titre">
+      <h2 id="coordonnees-titre">Vos coordonnées</h2>
+      <p>Aucune donnée n'est transmise ni sauvegardée : tout le calcul se fait dans votre navigateur.</p>
+      <div class="cases">
+        <label class="case" for="f_consentContact">
+          <input type="checkbox" id="f_consentContact" name="consentContact" value="contact" autocomplete="off">
+          <span>J'accepte d'être contacté(e) au sujet de mon évaluation</span>
+        </label>
+        <label class="case" for="f_consentStats">
+          <input type="checkbox" id="f_consentStats" name="consentStats" value="statistiques" autocomplete="off">
+          <span>J'accepte que mes données servent à produire des statistiques de marché</span>
+        </label>
+      </div>
+      <div id="bloc-identite" hidden>
+        <h3>Identité et adresse de l'immeuble</h3>
+        <div id="erreurs-contact" role="alert"></div>
+        <div class="grille cols-2">
+          <div class="champ">
+            <label for="f_prenom">Prénom</label>
+            <input id="f_prenom" name="prenom" type="text" maxlength="60" autocomplete="off" spellcheck="false" aria-describedby="aide_prenom">
+            <p class="aide" id="aide_prenom">Requis si la personne accepte d'être contactée.</p>
+          </div>
+          <div class="champ">
+            <label for="f_nom">Nom</label>
+            <input id="f_nom" name="nom" type="text" maxlength="80" autocomplete="off" spellcheck="false" aria-describedby="aide_nom">
+            <p class="aide" id="aide_nom">Requis si la personne accepte d'être contactée.</p>
+          </div>
+          <div class="champ">
+            <label for="f_telephone">Téléphone</label>
+            <input id="f_telephone" name="telephone" type="tel" inputmode="tel" maxlength="25" autocomplete="off" spellcheck="false" aria-describedby="aide_telephone">
+            <p class="aide" id="aide_telephone">Téléphone ou courriel requis. Numéro nord-américain à 10 chiffres.</p>
+          </div>
+          <div class="champ">
+            <label for="f_courriel">Courriel</label>
+            <input id="f_courriel" name="courriel" type="email" inputmode="email" maxlength="120" autocomplete="off" spellcheck="false" aria-describedby="aide_courriel">
+            <p class="aide" id="aide_courriel">Téléphone ou courriel requis.</p>
+          </div>
+          <div class="champ">
+            <label for="f_adresseImmeuble">Adresse de l'immeuble (numéro et rue)</label>
+            <input id="f_adresseImmeuble" name="adresseImmeuble" type="text" maxlength="120" autocomplete="off" spellcheck="false" aria-describedby="aide_adresseImmeuble">
+            <p class="aide" id="aide_adresseImmeuble">Aucune recherche n'est faite à partir de l'adresse.</p>
+          </div>
+          <div class="champ">
+            <label for="f_municipalite">Municipalité</label>
+            <input id="f_municipalite" name="municipalite" type="text" maxlength="80" autocomplete="off" spellcheck="false" aria-describedby="aide_municipalite">
+            <p class="aide" id="aide_municipalite">Municipalité de l'immeuble (peut différer de la ville de référence SCHL).</p>
+          </div>
+          <div class="champ">
+            <label for="f_codePostal">Code postal</label>
+            <input id="f_codePostal" name="codePostal" type="text" maxlength="7" autocomplete="off" spellcheck="false" autocapitalize="characters" aria-describedby="aide_codePostal">
+            <p class="aide" id="aide_codePostal">Format A1A 1A1.</p>
+          </div>
+        </div>
+      </div>
+      <h3>Prix payé</h3>
+      <div class="grille cols-2">
+        <div class="champ">
+          <p id="lib-nombre" class="etiquette">Nombre de logements</p>
+          <p id="nombre-logements" class="valeur-lue" aria-labelledby="lib-nombre">—</p>
+          <p class="aide">Total des logements saisis par taille.</p>
+        </div>
+        <div class="champ">
+          <label for="f_prixAchat">Prix payé ($)</label>
+          <input id="f_prixAchat" name="prixAchat" type="text" inputmode="decimal" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="champ">
+          <label for="f_anAchat">Année d'achat</label>
+          <input id="f_anAchat" name="anAchat" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" maxlength="4">
+        </div>
+        <div class="champ">
+          <p id="lib-prix-logement" class="etiquette">Prix payé par logement</p>
+          <p id="prix-par-logement" class="valeur-lue" aria-labelledby="lib-prix-logement">—</p>
+          <p class="aide">Prix payé divisé par le nombre de logements.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="rendement pas-imprimer" id="rendement" aria-labelledby="rendement-titre">
+      <h2 id="rendement-titre">Indicateurs de rendement</h2>
+      <p class="aide">Situation actuelle, vue prudente, dépenses détaillées. Le calcul se fait dans votre navigateur.</p>
+      <button type="button" id="btn-rendement" class="bouton">Calculer les indicateurs</button>
+      <div id="rendement-corps"></div>
+      <details>
+        <summary>Limites de zonage saisies</summary>
+        <div class="grille cols-2" id="champs-zonage-rendement"></div>
+      </details>
+    </section>
+
+    <section class="zonage" id="zonage" aria-labelledby="zonage-titre">
+      <h2 id="zonage-titre">Références de zonage</h2>
+      <div class="avertissement-zonage">
+        <p>Les renseignements sur le zonage fournis ici le sont à titre de référence seulement. Ils peuvent avoir changé. Le règlement officiel de la municipalité a préséance. Vérifiez les normes applicables auprès du service d'urbanisme de la municipalité concernée avant toute décision.</p>
+        <p>Ces renseignements ne constituent pas une promesse de potentiel de développement, ni une assurance qu'une modification au zonage sera accordée, ni un avis juridique ou un avis d'urbanisme. Ils ne remplacent pas la consultation du règlement en vigueur ni une demande officielle auprès de la municipalité.</p>
+        <p>Présenté par l'Équipe Chiasson De Francesco, RE/MAX D'ABORD.</p>
+      </div>
+      <div class="champ">
+        <label for="zonage-muni">Municipalité</label>
+        <select id="zonage-muni"></select>
+      </div>
+      <div id="zonage-corps"></div>
+    </section>
+
+    <section class="residuel pas-imprimer" id="residuel" aria-labelledby="residuel-titre">
+      <h2 id="residuel-titre">Valeur résiduelle du terrain</h2>
+      <p class="aide">Les paramètres de zonage sont saisis ici. Logements = minimum de la grille, du COS et de l'emprise × étages.</p>
+      <div class="grille cols-2">
+        <div class="champ"><label for="f_tM2">Superficie du terrain (m²)</label><input id="f_tM2" type="text" inputmode="decimal" autocomplete="off" spellcheck="false"></div>
+        <div class="champ"><label for="f_prixT">Prix du terrain ($)</label><input id="f_prixT" type="text" inputmode="decimal" autocomplete="off" spellcheck="false"></div>
+        <div class="champ"><label for="f_supLog">Superficie par logement (m²)</label><input id="f_supLog" type="text" inputmode="decimal" autocomplete="off" spellcheck="false"></div>
+        <div class="champ"><label for="f_s1Nom">Scénario</label><input id="f_s1Nom" type="text" autocomplete="off" spellcheck="false" maxlength="80"></div>
+        <div class="champ"><label for="f_s1Grille">Maximum de la grille</label><input id="f_s1Grille" type="text" inputmode="numeric" autocomplete="off" spellcheck="false"></div>
+        <div class="champ"><label for="f_s1Cos">COS</label><input id="f_s1Cos" type="text" inputmode="decimal" autocomplete="off" spellcheck="false"></div>
+        <div class="champ"><label for="f_s1Empr">Emprise (%)</label><input id="f_s1Empr" type="text" inputmode="decimal" autocomplete="off" spellcheck="false"></div>
+        <div class="champ"><label for="f_s1Et">Étages</label><input id="f_s1Et" type="text" inputmode="numeric" autocomplete="off" spellcheck="false"></div>
+      </div>
+      <button type="button" id="btn-residuel" class="bouton">Calculer la valeur résiduelle</button>
+      <div id="residuel-corps"></div>
+    </section>
+
+    <section class="hypotheses" id="hypotheses">
+      <h2>Hypothèses et statuts</h2>
+      <p id="legende-statuts">Statuts : Confirmé (source officielle citée), Déduit (calculé des données saisies), Estimé (source secondaire, à valider), Hypothèse (valeur de travail modifiable).</p>
+      <details>
+        <summary>Tableau des paramètres (valeur, statut, source, date)</summary>
+        <div id="table-parametres"></div>
+      </details>
+    </section>
+
+    <section class="limites" id="limites">
+      <h2>Limites</h2>
+      <ul>
+        <li>Statut Hypothèse ajouté (non indiqué dans la Page) pour : droits de mutation de Magog, Gatineau, Trois-Rivières et Saguenay (barème de base, la Page ne confirme que Sherbrooke, Québec, Montréal); amortissement par défaut du propriétaire occupant (25 ans); années d'achat et de vente d'exemple. À valider.</li>
+        <li>La surprime d'amortissement de la grille SCHL est reprise telle quelle de la Page; sa source détaillée n'y figure pas : à revalider.</li>
+        <li>Le TGA central reste une Hypothèse (aucune source publique pour Sherbrooke); les taux assurés (4,84 %, 4,64 %) et le taux SPCC sont des sources secondaires, à valider.</li>
+        <li>Les taxes sur la prime SCHL passent de 9 % à 9,975 % après le 31 déc. 2026 (selon la Page) : mettre à jour la valeur à ce moment-là.</li>
+      </ul>
+    </section>
+
+    <section class="appel" id="contact">
+      <h2 class="visually-hidden">Contact</h2>
+      <p>Vous aimeriez en discuter? <a href="index.html#wealthLeadForm">Écrivez-nous</a> ou <a href="tel:+18199194631">appelez-nous</a> : un courtier de l'Équipe Chiasson De Francesco peut valider cette estimation avec vous, sans obligation.</p>
+      <p class="aide"><a href="tel:+18199194631">819-919-4631</a> · <a href="mailto:info@vendremonplex.com">info@vendremonplex.com</a></p>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <div class="pied-int pied-grille">
+      <div>
+        <p class="marque-nom">Vendremon<span class="marque-accent">plex</span>.com</p>
+        <p>Outil présenté par l'Équipe Chiasson De Francesco, courtiers immobiliers, Sherbrooke.</p>
+      </div>
+      <div>
+        <h2>Nous joindre</h2>
+        <ul>
+          <li>157 boul. Jacques-Cartier Sud, Sherbrooke (Québec) J1J 2Z4</li>
+          <li><a href="tel:+18199194631">T: 819-919-4631</a></li>
+          <li><a href="mailto:info@vendremonplex.com">E: info@vendremonplex.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Affiliation</h2>
+        <div class="agence">
+          <strong>RE/MAX D'ABORD</strong>
+          <span>Courtiers Immobiliers</span>
+        </div>
+      </div>
+    </div>
+    <p class="pied-bas">© 2026 Équipe Chiasson De Francesco. Tous droits réservés.</p>
+  </footer>
+
+  <script type="module" src="evaluation-bloc.ui.js"></script>
+</body>
+</html>

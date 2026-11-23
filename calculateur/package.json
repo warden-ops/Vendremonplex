@@ -1,0 +1,11 @@
+{
+  "name": "evaluation-bloc-vendremonplex",
+  "private": true,
+  "type": "module",
+  "description": "Brouillon \u00e0 approuver par P-O. Aucune d\u00e9pendance.",
+  "scripts": {
+    "test": "node tests.js && node tests_v2.js && node tests_v3.js",
+    "verifier-oracle": "node verification/fuzz_oracle.mjs 3000",
+    "regenerer": "node verification/generer_champs.mjs && node verification/generer_schema.mjs && node verification/generer_attendus.mjs"
+  }
+}
