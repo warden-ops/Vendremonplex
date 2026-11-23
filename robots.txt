@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Allow: /evaluation-bloc.html
+
+Sitemap: https://vendremonplex.com/sitemap.xml
